@@ -9,7 +9,7 @@ export default function App() {
   return (
     //<Login/>
     //<Khac/>
-    <Home/>
-    //<Product/>
+    //<Home/>
+    <Product/>
   )
 }
