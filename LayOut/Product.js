@@ -103,7 +103,7 @@ export default function Product() {
                 <RnIcon style={{marginLeft:10}} name="chevron-down-sharp" size={30} color="black"/>
             </View>
             <View style={{borderBottomWidth:0.2,flexDirection:"row",height:70,justifyContent:'center',alignItems:'center',borderColor:"gray"}}>
-                <TextInput placeholder="Search" style={{height:50,width:'65%',backgroundColor:'white',borderRadius:20,fontSize:18}}>
+                <TextInput placeholder="  Search" style={{height:50,width:'65%',backgroundColor:'white',borderRadius:20,fontSize:18}}>
 
                 </TextInput>
                 <TouchableOpacity style={{height:50,width:50,borderRadius:50/2,backgroundColor:'white',marginLeft:5,marginVertical:10,justifyContent:'center',alignItems:'center'}}>
@@ -131,7 +131,7 @@ export default function Product() {
                     <Text style={{fontWeight:'bold'}}>Trang Chủ</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={{flex:1, justifyContent:'center',alignItems:'center',}}>
-                    <RnIcon name="cafe-outline" size={30} color="black"/>
+                    <RnIcon name="cafe-outline" size={30} color="orange"/>
                     <Text style={{fontWeight:'bold'}}>Đặt Hàng</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={{flex:1, justifyContent:'center',alignItems:'center',}}>

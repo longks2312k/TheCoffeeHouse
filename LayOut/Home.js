@@ -234,7 +234,7 @@ export default function Demo() {
             
             <View style={{height:60,flexDirection:'row', justifyContent:'center',alignItems:'center',backgroundColor:'white'}}>
                 <TouchableOpacity style={{flex:1, justifyContent:'center',alignItems:'center',}}>
-                    <RnIcon name="home-outline" size={30} color="black"/>
+                    <RnIcon name="home-outline" size={30} color="orange"/>
                     <Text style={{fontWeight:'bold'}}>Trang Chủ</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={{flex:1, justifyContent:'center',alignItems:'center',}}>
