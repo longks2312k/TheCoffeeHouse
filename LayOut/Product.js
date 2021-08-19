@@ -132,7 +132,7 @@ export default function Product() {
                 </TouchableOpacity>
                 <TouchableOpacity style={{flex:1, justifyContent:'center',alignItems:'center',}}>
                     <RnIcon name="cafe-outline" size={30} color="orange"/>
-                    <Text style={{fontWeight:'bold'}}>Đặt Hàng</Text>
+                    <Text style={{fontWeight:'bold',color:'orange'}}>Đặt Hàng</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={{flex:1, justifyContent:'center',alignItems:'center',}}>
                     <RnIcon name="fast-food-outline" size={30} color="black"/>

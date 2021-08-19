@@ -141,7 +141,7 @@ export default function Store() {
                 </TouchableOpacity>
                 <TouchableOpacity style={{flex:1, justifyContent:'center',alignItems:'center',}}>
                     <RnIcon name="fast-food-outline" size={30} color="orange"/>
-                    <Text style={{fontWeight:'bold'}}>Cửa Hàng</Text>
+                    <Text style={{fontWeight:'bold',color:'orange'}}>Cửa Hàng</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={{flex:1, justifyContent:'center',alignItems:'center',}}>
                     <RnIcon1 name="ticket-confirmation-outline" size={30} color="black"/>

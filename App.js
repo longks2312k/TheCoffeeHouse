@@ -8,10 +8,6 @@ import Store from './LayOut/Store'
 
 export default function App() {
   return (
-    //<Login/>
-    //<Other/>
-    //<Home/>
-    //<Product/>
-    <Store/>
+    <Other/>
   )
 }
