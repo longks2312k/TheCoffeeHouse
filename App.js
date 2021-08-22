@@ -2,6 +2,8 @@ import React from 'react'
 import { View, Text, FlatList, StyleSheet, StatusBar, TouchableOpacity, SafeAreaView, Image, ScrollView, ViewBase } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+
 import RnIcon from 'react-native-vector-icons/Ionicons';
 import RnIcon1 from 'react-native-vector-icons/MaterialCommunityIcons';
 import RnIcon2 from 'react-native-vector-icons/Fontisto';
@@ -238,66 +240,52 @@ const Home = ({ navigation }) => {
 					</View>
 				</View>
 			</ScrollView>
-
-			<View style={{ height: 60, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', backgroundColor: 'white' }}>
-				<TouchableOpacity
-					onPress={() => {
-						navigation.navigate('Trang Chủ');
-					}}
-					style={{ flex: 1, justifyContent: 'center', alignItems: 'center', }}>
-					<RnIcon name="home-outline" size={30} color="black" />
-					<Text style={{ fontWeight: 'bold' }}>Trang Chủ</Text>
-				</TouchableOpacity>
-				<TouchableOpacity
-					onPress={() => {
-						navigation.navigate('Đặt Hàng');
-					}}
-					style={{ flex: 1, justifyContent: 'center', alignItems: 'center', }}>
-          <RnIcon name="fast-food-outline" size={30} color="black" />
-					<Text style={{ fontWeight: 'bold' }}>Đặt Hàng</Text>
-				</TouchableOpacity>
-				<TouchableOpacity
-					onPress={() => {
-						navigation.navigate('Cửa Hàng');
-					}}
-					style={{ flex: 1, justifyContent: 'center', alignItems: 'center', }}>
-					<RnIcon1 name="storefront-outline" size={30} color="black" />
-					<Text style={{ fontWeight: 'bold', color: 'black' }}>Cửa Hàng</Text>
-				</TouchableOpacity>
-				<TouchableOpacity
-					onPress={() => {
-						navigation.navigate('Tích Điểm');
-					}}
-					style={{ flex: 1, justifyContent: 'center', alignItems: 'center', }}>
-					<RnIcon1 name="ticket-confirmation-outline" size={30} color="black" />
-					<Text style={{ fontWeight: 'bold' }}>Tích Điểm</Text>
-				</TouchableOpacity>
-				<TouchableOpacity
-					onPress={() => {
-						navigation.navigate('Khác');
-					}}
-					style={{ flex: 1, justifyContent: 'center', alignItems: 'center', }}>
-					<RnIcon name="list-outline" size={30} color="black" />
-					<Text style={{ fontWeight: 'bold' }}>Khác</Text>
-				</TouchableOpacity>
-			</View>
 		</View>
   );
 };
 
 const Stack = createNativeStackNavigator();
+const Tap = createBottomTabNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Trang Chủ" component={Home} />
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Đặt Hàng" component={Product} />
-        <Stack.Screen name="Cửa Hàng" component={Store} />
-        <Stack.Screen name="Tích Điểm" component={Ticket} />
-        <Stack.Screen name="Khác" component={Other} />
-      </Stack.Navigator>
+      <Tap.Navigator 
+			screenOptions={({ route }) => ({
+				tabBarIcon: ({ focused, color, size }) => {
+					let iconName;
+
+					if (route.name === 'Trang Chủ') {
+						iconName = focused
+							? 'home'
+							: 'home-outline';
+					} else if (route.name === 'Đặt Hàng') {
+						iconName = focused ? 'coffee' : 'coffee-outline';
+					}
+					else if (route.name === 'Cửa Hàng') {
+						iconName = focused ? 'storefront' : 'storefront-outline';
+					}
+					else if(route.name === 'Tích Điểm') {
+						iconName = focused ? 'ticket-confirmation' : 'ticket-confirmation-outline';
+					}
+					else if (route.name === 'Khác') {
+						iconName = focused ? 'format-list-bulleted' : 'format-list-bulleted';
+					}
+
+			return <RnIcon1 name={iconName} size={35} color={color} />;
+				},
+			tabBarActiveTintColor: 'orange',
+			tabBarInactiveTintColor: 'gray',
+			headerShown:false,
+			
+			})}
+			>
+        <Tap.Screen name="Trang Chủ" component={Home} />
+        <Tap.Screen name="Đặt Hàng" component={Product} />
+        <Tap.Screen name="Cửa Hàng" component={Store} />
+        <Tap.Screen name="Tích Điểm" component={Ticket} />
+        <Tap.Screen name="Khác" component={Other} />
+      </Tap.Navigator>
     </NavigationContainer>
   )
 }
