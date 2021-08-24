@@ -12,9 +12,11 @@ import Swiper from 'react-native-swiper';
 
 import Login from './screens/Login'
 import Other from './screens/Other'
-import Product from './screens/Product'
+import Order from './screens/Order'
 import Store from './screens/Store'
 import Ticket from './screens/Ticket'
+import Wishlist from './screens/Wishlist'
+
 
 const styles = StyleSheet.create({
 	wrapper: {
@@ -53,12 +55,12 @@ const Home = ({ navigation }) => {
 			</View>
 			<ScrollView style={{ flex: 1, width: '94%', marginLeft: '3%', backgroundColor: '#ececec', borderRadius: 5, }}>
 				<View style={{ height: 120, marginTop: 10, width: '100%', borderColor: '#ececec', backgroundColor: 'white', borderWidth: 1, borderRadius: 10, flexDirection: 'row', justifyContent: "center", alignItems: "center" }}>
-					<TouchableOpacity style={{ height: 100, width: '48%', backgroundColor: 'white', justifyContent: "center", alignItems: "center", borderRadius: 10 }}>
+					<TouchableOpacity  style={{ height: 100, width: '48%', backgroundColor: 'white', justifyContent: "center", alignItems: "center", borderRadius: 10 }}>
 						<RnIcon3 name="shipping-fast" size={60} color="orange" />
 						<Text style={{ fontSize: 18, fontWeight: 'bold' }}>Giao Hàng</Text>
 					</TouchableOpacity>
 					<Text style={{ height: 90, width: 2, backgroundColor: '#ececec' }}></Text>
-					<TouchableOpacity style={{ height: 100, width: '48%', borderRadius: 10, backgroundColor: 'white', justifyContent: "center", alignItems: "center" }}>
+					<TouchableOpacity  style={{ height: 100, width: '48%', borderRadius: 10, backgroundColor: 'white', justifyContent: "center", alignItems: "center" }}>
 						<RnIcon2 name="shopping-bag-1" size={65} color="orange" />
 						<Text style={{ fontSize: 18, fontWeight: 'bold' }}>Mang Về</Text>
 					</TouchableOpacity>
@@ -243,9 +245,48 @@ const Home = ({ navigation }) => {
 		</View>
   );
 };
-
-const Stack = createNativeStackNavigator();
+const HomeStack = createNativeStackNavigator();
+const OrderStack = createNativeStackNavigator();
+const StoreStack = createNativeStackNavigator();
+const OtherStack = createNativeStackNavigator();
 const Tap = createBottomTabNavigator();
+
+function OrderStackScreen() {
+  return (
+    <OrderStack.Navigator screenOptions={{headerShown:false}}>
+			<OrderStack.Screen name="Order" component={Order} />
+      <OrderStack.Screen name="Wishlist" component={Wishlist} />
+    </OrderStack.Navigator>
+  );
+}
+
+function OtherStackScreen() {
+  return (
+    <OtherStack.Navigator screenOptions={{headerShown:false}}>
+			<OtherStack.Screen name="Other" component={Other} />
+      <OtherStack.Screen name="Ticket" component={Ticket} />
+			<OtherStack.Screen name="Login" component={Login} />
+    </OtherStack.Navigator>
+  );
+}
+
+function HomeStackScreen() {
+  return (
+    <HomeStackStack.Navigator screenOptions={{headerShown:false}}>
+			<HomeStackStack.Screen name="Home" component={Home} />
+      <HomeStackStack.Screen name="Order" component={Order} />
+    </HomeStackStack.Navigator>
+  );
+}
+
+function StoreStackScreen() {
+  return (
+    <StoreStack.Navigator screenOptions={{headerShown:false}}>
+			<StoreStack.Screen name="Store" component={Store} />
+      <StoreStack.Screen name="Ticket" component={Ticket} />
+    </StoreStack.Navigator>
+  );
+}
 
 export default function App() {
   return (
@@ -256,9 +297,7 @@ export default function App() {
 					let iconName;
 
 					if (route.name === 'Trang Chủ') {
-						iconName = focused
-							? 'home'
-							: 'home-outline';
+						iconName = focused ? 'home' : 'home-outline';
 					} else if (route.name === 'Đặt Hàng') {
 						iconName = focused ? 'coffee' : 'coffee-outline';
 					}
@@ -281,10 +320,10 @@ export default function App() {
 			})}
 			>
         <Tap.Screen name="Trang Chủ" component={Home} />
-        <Tap.Screen name="Đặt Hàng" component={Product} />
-        <Tap.Screen name="Cửa Hàng" component={Store} />
+        <Tap.Screen name="Đặt Hàng" component={OrderStackScreen} />
+        <Tap.Screen name="Cửa Hàng" component={StoreStackScreen} />
         <Tap.Screen name="Tích Điểm" component={Ticket} />
-        <Tap.Screen name="Khác" component={Other} />
+        <Tap.Screen name="Khác" component={OtherStackScreen} />
       </Tap.Navigator>
     </NavigationContainer>
   )

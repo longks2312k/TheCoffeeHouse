@@ -13,7 +13,7 @@ export default function Other({ navigation }) {
 					<RnIcon name="notifications-outline" size={30} color="black" />
 
 				</TouchableOpacity>
-				<TouchableOpacity style={{ height: 50, width: 80, borderRadius: 50 / 2, backgroundColor: '#fff', marginHorizontal: 15, marginVertical: 10, justifyContent: 'center', alignItems: 'center', flexDirection: 'row', elevation: 5, shadowColor: '0,0,0, .4', shadowRadius: 1, shadowOpacity: 1, shadowOffset: { height: 1, width: 1 } }}>
+				<TouchableOpacity onPress={() => navigation.navigate('Ticket')} style={{ height: 50, width: 80, borderRadius: 50 / 2, backgroundColor: '#fff', marginHorizontal: 15, marginVertical: 10, justifyContent: 'center', alignItems: 'center', flexDirection: 'row', elevation: 5, shadowColor: '0,0,0, .4', shadowRadius: 1, shadowOpacity: 1, shadowOffset: { height: 1, width: 1 } }}>
 					<RnIcon1 name="ticket-confirmation-outline" size={30} color="orange" />
 					<Text style={{ fontSize: 24, fontWeight: 'bold' }}> 4</Text>
 				</TouchableOpacity>
@@ -68,7 +68,7 @@ export default function Other({ navigation }) {
 						<Text style={{ marginTop: 18, marginLeft: 15, fontSize: 24 }}>Cài đặt</Text>
 						<RnIcon style={{ marginTop: 20, marginLeft: 234, }} name="ios-chevron-forward" size={30} color="black" />
 					</TouchableOpacity>
-					<TouchableOpacity style={{ flex: 1, backgroundColor: 'white', borderRadius: 10, flexDirection: 'row', marginBottom: 3 }}>
+					<TouchableOpacity onPress={() => navigation.navigate('Login')} style={{ flex: 1, backgroundColor: 'white', borderRadius: 10, flexDirection: 'row', marginBottom: 3 }}>
 						<RnIcon style={{ marginTop: 20, marginLeft: 15, }} name="log-out-outline" size={25} color="black" />
 						<Text style={{ marginTop: 18, marginLeft: 15, fontSize: 24 }}>Đăng xuất</Text>
 						<RnIcon style={{ marginTop: 20, marginLeft: 200, }} name="ios-chevron-forward" size={30} color="black" />

@@ -5,6 +5,8 @@ import RnIcon1 from 'react-native-vector-icons/MaterialCommunityIcons';
 import RnIcon2 from 'react-native-vector-icons/Fontisto';
 import RnIcon3 from 'react-native-vector-icons/FontAwesome5';
 
+import Coffee from './SonOfOrder/Coffee';
+
 const DATA = [
 	{
 		id: '1',
@@ -80,9 +82,6 @@ const DATA = [
 
 export default function Product({navigation}) {
 
-	const { height, width } = Dimensions.get('window');
-	const itemWidth = (width - 15) / 2;
-
 	const renderItem = ({ item }) => (
 		<View style={{ flex: 1, margin: 5, flexDirection: 'row-reverse', borderRadius: 10, backgroundColor: 'white', padding: 10, }}>
 			<Image
@@ -111,12 +110,12 @@ export default function Product({navigation}) {
 					<RnIcon name="search-outline" size={30} color="black" />
 
 				</TouchableOpacity>
-				<TouchableOpacity style={{ height: 50, width: 50, borderRadius: 50 / 2, backgroundColor: 'white', marginLeft: 5, marginVertical: 10, justifyContent: 'center', alignItems: 'center' }}>
+				<TouchableOpacity onPress={() => navigation.navigate('Wishlist')} style={{ height: 50, width: 50, borderRadius: 50 / 2, backgroundColor: 'white', marginLeft: 5, marginVertical: 10, justifyContent: 'center', alignItems: 'center' }}>
 					<RnIcon name="heart-outline" size={30} color="black" />
 
 				</TouchableOpacity>
 			</View>
-			<SafeAreaView style={{ flex: 1, width: '94%', marginLeft: '3%', borderRadius: 10, }}>
+			<SafeAreaView style={{ flex: 1, width: '94%', marginLeft: '3%', borderRadius: 10,marginBottom:10 }}>
 				<View style={{ backgroundColor: '#ececec' }}>
 					<FlatList
 						style={{ backgroundColor: '#ececec', }}

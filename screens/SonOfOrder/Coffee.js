@@ -41,12 +41,49 @@ const DATA = [
 		date: 'Giảm giá còn 289.000đ khi nhập mã ưu đãi',
 		gia: '336.000đ'
 	},
+	{
+		id: '6',
+		Image: 'https://product.hstatic.net/1000075078/product/605da09f717e5d00114a3cd8_app_long_nhan_hat_chia_copy-min_15afd5872ab74b5fbb55414e965768bd_master.png',
+		text: 'Trà Long Nhãn Hạt Chia',
+		date: 'sử dụng Long Nhãn làm tăng mùi vị của trà',
+		gia: '45.000đ'
+	},
+	{
+		id: '7',
+		Image: 'https://product.hstatic.net/1000075078/product/lon-park6_9fb70fb05cc44ddabf13ff115bab1ce6_master.jpg',
+		text: 'Trà Hạt Sen',
+		date: 'sử dụng Hạt Sen rất tốt cho sức khỏe',
+		gia: '45.000đ'
+	},
+	{
+		id: '8',
+		Image: 'https://product.hstatic.net/1000075078/product/lon-park6_9fb70fb05cc44ddabf13ff115bab1ce6_master.jpg',
+		text: 'Cà phê Peak Flavor',
+		date: 'Ưu đãi 10% cho đơn hàng Cà phê gói',
+		gia: '90.000đ'
+	},
+	{
+		id: '9',
+		Image: 'https://product.hstatic.net/1000075078/product/lon-park6_9fb70fb05cc44ddabf13ff115bab1ce6_master.jpg',
+		text: 'Cà Phê Rich Finish',
+		date: 'Ưu đãi 10% cho đơn hàng Cà phê gói',
+		gia: '90.000đ'
+	},
+	{
+		id: '10',
+		Image: 'https://product.hstatic.net/1000075078/product/lon-park6_9fb70fb05cc44ddabf13ff115bab1ce6_master.jpg',
+		text: 'Combo 6 Lon Cà Phê Sữa',
+		date: 'Giảm giá cho đơn từ 119.000đ ',
+		gia: '84.000đ'
+	},
 ];
 
-export default function Wishlist() {
+export default function Coffee() {
+  const { height, width } = Dimensions.get('window');
+	const itemWidth = (width - 15) / 2;
 
 	const renderItem = ({ item }) => (
-		<View style={{ flex: 1, margin: 5,marginVertical:10, flexDirection: 'row-reverse', borderRadius: 10, backgroundColor: 'white', padding: 10, }}>
+		<View style={{ flex: 1, margin: 5, flexDirection: 'row-reverse', borderRadius: 10, backgroundColor: 'white', padding: 10, }}>
 			<Image
 				style={{ height: 120, width: '30%', borderRadius: 10 }}
 				source={{ uri: item.Image }}
@@ -58,22 +95,19 @@ export default function Wishlist() {
 			</View>
 		</View>
 	);
-
-	return (
-		<View style={{ flex: 1, backgroundColor: '#ececec' }}>
-			<View style={{ height: 70, flexDirection: 'row', backgroundColor: 'white',justifyContent:'center', alignItems: 'center',borderBottomWidth:2,borderColor:'#ececec'}}>
-				<Text style={{ fontSize: 26, fontWeight: 'bold', marginLeft: 10 }}>Wishlist</Text>
-			</View>
-			<SafeAreaView style={{ flex: 1, width: '94%', marginLeft: '3%', borderRadius: 10, }}>
-				<View style={{ backgroundColor: '#ececec' }}>
-					<FlatList
+  
+  return (
+    <View>
+      <View style={{ backgroundColor: '#ececec' }}>
+      <Text style={{ fontSize: 26, fontWeight: 'bold', marginLeft: 10 }}>Giao Hàng Đến</Text>	
+          <FlatList
 						style={{ backgroundColor: '#ececec', }}
 						data={DATA}
 						renderItem={renderItem}
 						keyExtractor={item => item.id}
 					/>
 				</View>
-			</SafeAreaView>
-		</View>
-	)
+    </View>
+  )
 }
+
