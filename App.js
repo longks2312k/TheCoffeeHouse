@@ -18,6 +18,7 @@ import Ticket from './screens/Ticket'
 import Wishlist from './screens/Wishlist'
 
 
+
 const styles = StyleSheet.create({
 	wrapper: {
 		height: 210,
