@@ -51,7 +51,7 @@ export default function Other({ navigation }) {
 						<RnIcon style={{ marginTop: 20, marginLeft: 169, }} name="ios-chevron-forward" size={30} color="black" />
 					</TouchableOpacity>
 				</View>
-				<Text style={{ fontWeight: 'bold', fontSize: 28, marginBottom: 5 }}>Tài</Text>
+				<Text style={{ fontWeight: 'bold', fontSize: 28, marginBottom: 5 }}>Tài khoản</Text>
 				<View style={{ backgroundColor: '#ececec', marginBottom: 30, height: 280 }}>
 					<TouchableOpacity style={{ flex: 1, backgroundColor: 'white', borderRadius: 10, flexDirection: 'row', marginBottom: 3 }}>
 						<RnIcon style={{ marginTop: 20, marginLeft: 15, }} name="person-outline" size={25} color="black" />

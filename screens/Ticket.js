@@ -20,17 +20,17 @@ export default function Ticket() {
 					<Text style={{ fontWeight: 'bold', fontSize: 30 }}>Tích Điểm</Text>
 				</View>
 			</View>
-			<View style={{ height: 60, width: '100%', backgroundColor: 'white' }}>
+			<View style={{ height: 55, width: '100%', backgroundColor: 'white' }}>
 				<View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: 5 }}>
-					<TouchableOpacity style={{ height: 50, width: '48%', backgroundColor: '#ececec', borderRadius: 20, justifyContent: 'center', alignItems: 'center', marginHorizontal: 5 }}>
+					<TouchableOpacity style={{ height: 42, width: '48%', backgroundColor: '#ececec', borderRadius: 20, justifyContent: 'center', alignItems: 'center', marginHorizontal: 5 }}>
 						<Text style={{ fontSize: 18 }}>Tích Điểm</Text>
 					</TouchableOpacity>
-					<TouchableOpacity style={{ height: 50, width: '48%', backgroundColor: '#ececec', borderRadius: 20, justifyContent: 'center', alignItems: 'center', marginHorizontal: 5 }}>
+					<TouchableOpacity style={{ height: 42, width: '48%', backgroundColor: '#ececec', borderRadius: 20, justifyContent: 'center', alignItems: 'center', marginHorizontal: 5 }}>
 						<Text style={{ fontSize: 18 }}>Đổi Ưu Đãi</Text>
 					</TouchableOpacity>
 				</View>
 			</View>
-			<DoiUuDai />
+			<DoiUuDai/>
 		</View>
 	)
 }
