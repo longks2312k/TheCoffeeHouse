@@ -1,10 +1,45 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Text, TouchableOpacity, Image, SafeAreaView, TextInput } from 'react-native'
 import RnIcon from "react-native-vector-icons/Ionicons";
 import Swiper from 'react-native-swiper'
+import Modal from 'react-native-modal';
+import { cfLogin } from './services/Api'
 
 
 export default function Login({navigation}) {
+	const [phone,setPhone] = useState()	
+	const [code,setCode] = useState()	
+	const [isVisible,setIsVisible] = useState(false)
+	const onChangePhone = (val) => setPhone(val)
+	const onChangeCode = (val) => setCode(val)
+	
+	const onCloseModal = () =>{
+		setIsVisible(false)
+	}
+
+	const onVerifyPhone = async () => {
+		
+		try {
+			const response = await cfLogin({phone: phone});
+			console.log('rs', response.data.data); 
+			setIsVisible(true)
+
+		} catch (error) {
+			console.error(error.response);
+		}
+	}
+	const onVerifyCode  = async () => {
+		try {
+			const response = await cfLogin({phone: phone,otp:code});
+			console.log('rs', response.data); 
+			setIsVisible(false)
+			navigation.navigate('Other')
+		} catch (error) {
+			console.error(error.response);
+		}
+	}
+
+
 	return (
 		<SafeAreaView>
 			<View>
@@ -18,9 +53,14 @@ export default function Login({navigation}) {
 					<View style={{ justifyContent: 'center', alignItems: 'center' }}>
 						<Text style={{ fontSize: 20, fontFamily: 'Times New Roman', marginTop: 20 }}>Chào mừng bạn đến với</Text>
 						<Text style={{ fontSize: 30, fontFamily: 'Showcard Gothic', fontWeight: 'bold', marginBottom: 30 }}>The Coffee House</Text>
-						<TextInput placeholder="Your Email" secureTextEntry={false} style={{ height: 50, width: '90%', fontSize: 16, borderColor: 'gray', borderWidth: 1, marginLeft: 5, fontFamily: 'Times New Roman', borderRadius: 10, marginBottom: 20 }} />
-						<TextInput placeholder="Your Password" secureTextEntry={true} style={{ height: 50, width: '90%', fontSize: 16, borderColor: 'gray', borderWidth: 1, marginLeft: 5, fontFamily: 'Times New Roman', borderRadius: 10, marginBottom: 20 }} />
-						<TouchableOpacity style={{ height: 50, width: '90%', borderColor: 'gray', borderWidth: 1, marginLeft: 5, borderRadius: 10, marginBottom: 20, justifyContent: 'center', alignItems: 'center', backgroundColor: "gray" }}>
+						<TextInput 
+							placeholder="Phone Number" 
+							secureTextEntry={false} 
+							value={phone}
+							onChangeText={onChangePhone}
+							style={{ height: 50, width: '90%', fontSize: 16, borderColor: 'gray', borderWidth: 1, marginLeft: 5, fontFamily: 'Times New Roman', borderRadius: 10, marginBottom: 20 }} 
+						/>
+						<TouchableOpacity onPress={onVerifyPhone} style={{ height: 50, width: '90%', borderColor: 'gray', borderWidth: 1, marginLeft: 5, borderRadius: 10, marginBottom: 20, justifyContent: 'center', alignItems: 'center', backgroundColor: "gray" }}>
 							<Text style={{ fontSize: 16, color: 'white' }}>Đăng NHập</Text>
 						</TouchableOpacity>
 						<View style={{ flexDirection: 'row' }}>
@@ -37,6 +77,30 @@ export default function Login({navigation}) {
 					</View>
 				</View>
 			</View>
+			<Modal
+        testID={'modal'}
+        isVisible={isVisible}
+        onSwipeComplete={onCloseModal}
+        swipeDirection={['up', 'left', 'right', 'down']}
+        style={{justifyContent: 'flex-end',margin: 0}}
+			>
+				<View style={{backgroundColor:'white',justifyContent:'center',alignItems:'center',height:700}}>
+					<TouchableOpacity onPress={onCloseModal}  style={{position:'absolute',top:0,right:0}}>
+					<RnIcon name="close" size={50} color="black" />
+					</TouchableOpacity>
+					<Text style={{ fontSize: 22,marginBottom:20}}>nhập mã cho sdt:{phone}</Text>
+					<TextInput 
+							placeholder="Mã OTP" 
+							secureTextEntry={false} 
+							value={code}
+							onChangeText={onChangePhone}
+							style={{ height: 50, width: '90%', fontSize: 16, borderColor: 'gray', borderWidth: 1, marginLeft: 5, fontFamily: 'Times New Roman', borderRadius: 10, marginBottom: 20 }} 
+						/>
+						<TouchableOpacity onPress={onVerifyCode} style={{ height: 50, width: '90%', borderColor: 'gray', borderWidth: 1, marginLeft: 5, borderRadius: 10, marginBottom: 20, justifyContent: 'center', alignItems: 'center', backgroundColor: "gray" }}>
+							<Text style={{ fontSize: 16, color: 'white' }}>Gửi Code</Text>
+						</TouchableOpacity>
+				</View>
+      </Modal>
 		</SafeAreaView>
 	)
 }

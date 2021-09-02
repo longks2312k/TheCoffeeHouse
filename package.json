@@ -20,6 +20,8 @@
     "npm": "^7.21.0",
     "react": "17.0.1",
     "react-native": "0.64.2",
+    "react-native-modal": "^13.0.0",
+    "react-native-phone-number-input": "^2.1.0",
     "react-native-safe-area-context": "^3.3.0",
     "react-native-screens": "^3.5.0",
     "react-native-scrollable-tab-view": "^1.0.0",

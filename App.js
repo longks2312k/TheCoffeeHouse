@@ -257,6 +257,7 @@ function OrderStackScreen() {
     <OrderStack.Navigator screenOptions={{headerShown:false}}>
 			<OrderStack.Screen name="Order" component={Order} />
       <OrderStack.Screen name="Wishlist" component={Wishlist} />
+			<OrderStack.Screen name="Login" component={Login}/>
     </OrderStack.Navigator>
   );
 }
@@ -275,7 +276,7 @@ function HomeStackScreen() {
   return (
     <HomeStackStack.Navigator screenOptions={{headerShown:false}}>
 			<HomeStackStack.Screen name="Home" component={Home} />
-      <HomeStackStack.Screen name="Order" component={Order} />
+      <HomeStackStack.Screen name="Login" component={Login} />
     </HomeStackStack.Navigator>
   );
 }
