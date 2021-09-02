@@ -10,3 +10,4 @@ const instance = axios.create({
   }
 });
 export const getProductList = () => instance.get('api/v2/menu')
+export const getStore = () => instance.get('api/get_all_store')

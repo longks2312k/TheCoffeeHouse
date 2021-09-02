@@ -6,6 +6,7 @@ import RnIcon2 from 'react-native-vector-icons/Fontisto';
 import RnIcon3 from 'react-native-vector-icons/FontAwesome5';
 
 import DoiUuDai from './SonofTicket/DoiUuDai'
+import TichDiem from './SonofTicket/TichDiem';
 
 export default function Ticket() {
 	return (
@@ -30,7 +31,7 @@ export default function Ticket() {
 					</TouchableOpacity>
 				</View>
 			</View>
-			<DoiUuDai/>
+			<TichDiem/>
 		</View>
 	)
 }
