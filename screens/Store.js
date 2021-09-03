@@ -36,8 +36,8 @@ export default function Store({ navigation }) {
 				source={{ uri: getImage(item.image_1)  }}
 			/>
 			<View style={{ width: '60%', marginLeft: 15 }}>
-				<Text style={{ fontSize: 18, marginTop: 10, fontWeight: 'bold' }}>{item.name}</Text>
-				<Text style={{ fontSize: 18, marginTop: 2 }}>{item.street}</Text>
+				<Text ellipsizeMode='tail' numberOfLines={1} style={{ fontSize: 18, marginTop: 8, fontWeight: 'bold' }}>{item.name}</Text>
+				<Text ellipsizeMode='tail' numberOfLines={1} style={{ fontSize: 18, marginTop: 2 }}>{item.street}</Text>
 				<Text style={{ fontSize: 18, marginTop: 2 }}>{item.opening_time}-{item.closing_time}</Text>
 				<Text style={{ fontSize: 18, marginTop: 2 }}>{item.phone}</Text>
 			</View>

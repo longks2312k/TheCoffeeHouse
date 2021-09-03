@@ -21,7 +21,7 @@ export default function Other({ navigation }) {
 					<Text style={{ fontWeight: 'bold', fontSize: 28 }}>Khác</Text>
 				</View>
 			</View>
-			<ScrollView style={{ marginTop: 10, width: '92%', marginHorizontal: 18 }}>
+			<ScrollView showsVerticalScrollIndicator={false} style={{ marginTop: 10, width: '92%', marginHorizontal: 18 }}>
 				<Text style={{ fontWeight: 'bold', fontSize: 28, marginBottom: 5 }}>Tiện ích</Text>
 				<TouchableOpacity style={{ backgroundColor: 'white', borderRadius: 10, height: 120, marginBottom: 10, }}>
 					<RnIcon style={{ marginTop: 10, marginLeft: 15, }} name="receipt-outline" size={40} color="orange" />

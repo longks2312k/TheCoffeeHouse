@@ -10,7 +10,7 @@ export default function TichDiem() {
   return (
     <View>
 
-      <ScrollView style={{ flex: 1 }}>
+      <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1 }}>
         <View style={{width:'96%',height:350,backgroundColor:'white',marginLeft:9,marginTop:5,borderRadius:20}}>
           <View style={{height:240,backgroundColor:'orange',width:'100%',borderRadius:20}}>
             <Text style={{ fontWeight: 'bold', fontSize: 26,marginTop:10,marginLeft:20,color:'white'}}>Nguyễn Hoàng Long</Text>
