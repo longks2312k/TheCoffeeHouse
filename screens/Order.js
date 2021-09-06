@@ -95,7 +95,8 @@ export default function Product({ navigation }) {
 
 			</ScrollView>
 			<View style={{ flex: 9 }}>
-				<FlatList
+					<FlatList
+						
 					style={{ backgroundColor: '#ececec', }}
 					data={product}
 					renderItem={renderItem}

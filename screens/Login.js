@@ -52,7 +52,7 @@ export default function Login({navigation}) {
 				<View style={{ height: 800, marginTop: -30, borderTopLeftRadius: 30, borderTopRightRadius: 30, backgroundColor: 'white' }}>
 					<View style={{ justifyContent: 'center', alignItems: 'center' , marginTop:20}}>
 						<Text style={{ fontSize: 20, fontFamily: 'Times New Roman', marginTop: 20 }}>Chào mừng bạn đến với</Text>
-						<Text style={{ fontSize: 30, fontFamily: 'Showcard Gothic', fontWeight: 'bold', marginBottom: 30 }}>The Coffee House</Text>
+						<Text style={{ fontSize: 30, fontFamily: 'Showcard Gothic', fontWeight: 'bold', marginBottom: 50 }}>The Coffee House</Text>
 						<TextInput 
 							textAlign={'center'}
 							maxLength={11}
@@ -63,7 +63,7 @@ export default function Login({navigation}) {
 							onChangeText={onChangePhone}
 							style={{ height: 50, width: '90%', fontSize: 20, borderColor: 'gray', borderWidth: 1, marginLeft: 5, fontFamily: 'Times New Roman', borderRadius: 10, marginBottom: 10, marginTop:40}} 
 						/>
-						<TouchableOpacity onPress={onVerifyPhone} style={{ height: 50, width: '90%', borderColor: 'gray', borderWidth: 1, marginLeft: 5, borderRadius: 10, marginBottom: 20,marginTop:20, justifyContent: 'center', alignItems: 'center', backgroundColor: "gray" }}>
+						<TouchableOpacity onPress={onVerifyPhone} style={{ height: 50, width: '90%', borderColor: 'gray', borderWidth: 1, marginLeft: 5, borderRadius: 10, marginBottom: 10,marginTop:20, justifyContent: 'center', alignItems: 'center', backgroundColor: "gray" }}>
 							<Text style={{ fontSize: 20, color: 'white' }}>Đăng NHập</Text>
 						</TouchableOpacity>
 						<View style={{ flexDirection: 'row',marginTop:30 }}>
@@ -71,7 +71,7 @@ export default function Login({navigation}) {
 							<Text style={{ fontSize: 18 }}>Hoặc</Text>
 							<View style={{ borderWidth: 1, width: '34%', height: 2, marginLeft: 10, marginTop: 12, borderColor: "#d8d5d5" }}></View>
 						</View>
-						<TouchableOpacity style={{ height: 50, width: '90%', borderColor: 'blue', borderWidth: 1, marginLeft: 5, borderRadius: 10, marginBottom: 20, marginTop: 50, justifyContent: 'center', alignItems: 'center', backgroundColor: "blue" }}>
+						<TouchableOpacity style={{ height: 50, width: '90%', borderColor: 'blue', borderWidth: 1, marginLeft: 5, borderRadius: 10, marginBottom: 20, marginTop: 40, justifyContent: 'center', alignItems: 'center', backgroundColor: "blue" }}>
 							<Text style={{ fontSize: 18, color: 'white' }}>Tiếp tục bằng Facebook</Text>
 						</TouchableOpacity>
 					</View>
@@ -105,6 +105,7 @@ export default function Login({navigation}) {
 						<TouchableOpacity onPress={onVerifyCode} style={{ height: 50, width: '90%', borderColor: 'gray', borderWidth: 1, marginLeft: 5, borderRadius: 10, marginBottom: 20, justifyContent: 'center', alignItems: 'center', backgroundColor: "gray" }}>
 							<Text style={{ fontSize: 20, color: 'white' }}>Xác Nhận</Text>
 						</TouchableOpacity>
+						
 				</View>
       </Modal>
 		</SafeAreaView>
