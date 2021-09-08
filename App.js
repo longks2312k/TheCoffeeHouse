@@ -10,12 +10,12 @@ import RnIcon2 from 'react-native-vector-icons/Fontisto';
 import RnIcon3 from 'react-native-vector-icons/FontAwesome5';
 import Swiper from 'react-native-swiper';
 
-import Login from './screens/Login'
-import Other from './screens/Other'
-import Order from './screens/Order'
-import Store from './screens/Store'
-import Ticket from './screens/Ticket'
-import Wishlist from './screens/Wishlist'
+import Bag from './src/screens/SonOfOrder/Bag'
+import Other from './src/screens/Other'
+import Order from './src/screens/Order'
+import Store from './src/screens/Store'
+import Ticket from './src/screens/Ticket'
+import Wishlist from './src/screens/SonOfOrder/Wishlist'
 
 
 
@@ -257,7 +257,7 @@ function OrderStackScreen() {
     <OrderStack.Navigator screenOptions={{headerShown:false}}>
 			<OrderStack.Screen name="Order" component={Order} />
       <OrderStack.Screen name="Wishlist" component={Wishlist} />
-			<OrderStack.Screen name="Login" component={Login}/>
+			<OrderStack.Screen name="Bag" component={Bag}/>
     </OrderStack.Navigator>
   );
 }
@@ -294,7 +294,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tap.Navigator 
-			screenOptions={({ route }) => ({
+				initialRouteName='Đặt Hàng'
+				screenOptions={({ route }) => ({
 				tabBarIcon: ({ focused, color, size }) => {
 					let iconName;
 

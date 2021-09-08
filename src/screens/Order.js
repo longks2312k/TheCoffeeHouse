@@ -48,7 +48,16 @@ export default function Product({ navigation }) {
 				<View style={{ width: '60%', marginRight: 30 }}>
 					<Text /*onPress={onTouch}*/ style={{ fontSize: 18, marginTop: 10, fontWeight: 'bold' }}>{item.product_name}</Text>
 					<Text ellipsizeMode='tail' numberOfLines={2} style={{ fontSize: 18, marginTop: 2 }}>{item.description}đ</Text>
-					<Text style={{ fontSize: 18, marginTop: 2 }}>{item.price}</Text>
+					<View style={{flexDirection:'row'}}>
+						<Text style={{ fontSize: 18, marginTop: 13 }}>Giá: {item.price}</Text>
+						<TouchableOpacity style={{ marginLeft:20, height: 40, width: 40, borderRadius: 40 / 2, backgroundColor: '#ececec', marginRight: 5,marginTop:5, justifyContent: 'center', alignItems: 'center', }}>
+							<RnIcon name="heart" size={25} color="black" />
+						</TouchableOpacity>	
+						<Text style={{marginLeft:10,fontSize:33}}>-</Text>
+						<TouchableOpacity style={{ marginLeft:15, height: 40, width: 40, borderRadius: 40 / 2, backgroundColor: '#ececec', marginRight: 5,marginTop:5, justifyContent: 'center', alignItems: 'center', }}>
+							<RnIcon3 name="cart-plus" size={20} color="black" />
+						</TouchableOpacity>
+					</View>
 				</View>
 				
 			</View>
@@ -60,6 +69,9 @@ export default function Product({ navigation }) {
 				<RnIcon3 style={{ marginLeft: 10 }} name="shipping-fast" size={50} color="orange" />
 				<Text style={{ fontSize: 26, fontWeight: 'bold', marginLeft: 10 }}>Giao Hàng Đến</Text>
 				<RnIcon style={{ marginLeft: 10 }} name="chevron-down-sharp" size={30} color="black" />
+				<TouchableOpacity onPress={() => navigation.navigate('Bag')} style={{ marginLeft:75, height: 50, width: 50, borderRadius: 50 / 2, backgroundColor: '#fff', marginRight: 15, marginVertical: 10, justifyContent: 'center', alignItems: 'center', elevation: 15, shadowColor: '0,0,0, .4', shadowRadius: 1, shadowOpacity: 1, shadowOffset: { height: 1, width: 1 } }}>
+					<RnIcon2 name="shopping-bag-1" size={25} color="black" />
+				</TouchableOpacity>
 			</View>
 			<View style={{ borderBottomWidth: 0.2, flexDirection: "row", height: 70, justifyContent: 'center', alignItems: 'center', borderColor: "gray" }}>
 				<TextInput placeholder="  Search" style={{ height: 50, width: '65%', backgroundColor: 'white', borderRadius: 20, fontSize: 18 }}>
