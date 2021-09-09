@@ -20,6 +20,9 @@ export default function Bag() {
 	const onRemoveAll = (item) => () => {
 		dispatch({ type: 'REMOVE_ALL', data: item })
 	}
+	const onUpQuantity = (item) => () => {
+		dispatch({type: 'UP_QUANTITY',data: item })
+	}
 
 	const renderItem = ({ item }) => {
 		return (
@@ -36,7 +39,7 @@ export default function Bag() {
 							<RnIcon name="caret-back-outline" size={25} color="black" style={{ marginRight: 3 }} />
 						</TouchableOpacity>
 						<Text style={{ marginLeft: 10, fontSize: 24, marginTop: 8 }}>{item.quantity}</Text>
-						<TouchableOpacity style={{ marginLeft: 15, height: 40, width: 40, borderRadius: 40 / 2, backgroundColor: '#ececec', marginRight: 5, marginTop: 5, justifyContent: 'center', alignItems: 'center', }}>
+						<TouchableOpacity onPress={onUpQuantity} style={{ marginLeft: 15, height: 40, width: 40, borderRadius: 40 / 2, backgroundColor: '#ececec', marginRight: 5, marginTop: 5, justifyContent: 'center', alignItems: 'center', }}>
 							<RnIcon name="caret-forward-outline" size={25} color="black" style={{ marginLeft: 3 }} />
 						</TouchableOpacity>
 						<TouchableOpacity onPress={onRemoveItem(item)} style={{ marginLeft: 75, backgroundColor: '#fff', marginTop: -8, marginRight: 15, marginVertical: 10, justifyContent: 'center', alignItems: 'center', }}>

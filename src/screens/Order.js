@@ -28,6 +28,9 @@ export default function Product({ navigation }) {
 	const onAddToBag = (item) => () => {
 		dispatch({type: 'ADD_CART',data: {...item,quantity: 1 } })
 	}
+	const onAddToWishlist = (item) => () => {
+		dispatch({type: 'ADD_CART',data: item })
+	}
 
 	useEffect(() => {
 
@@ -58,7 +61,7 @@ export default function Product({ navigation }) {
 					<Text ellipsizeMode='tail' numberOfLines={2} style={{ fontSize: 18, marginTop: 2 }}>{item.description}đ</Text>
 					<View style={{flexDirection:'row'}}>
 						<Text style={{ fontSize: 18, marginTop: 13 }}>Giá: {item.price}</Text>
-						<TouchableOpacity style={{ marginLeft:20, height: 40, width: 40, borderRadius: 40 / 2, backgroundColor: '#ececec', marginRight: 5,marginTop:5, justifyContent: 'center', alignItems: 'center', }}>
+						<TouchableOpacity onPress={onAddToWishlist(item)} style={{ marginLeft:20, height: 40, width: 40, borderRadius: 40 / 2, backgroundColor: '#ececec', marginRight: 5,marginTop:5, justifyContent: 'center', alignItems: 'center', }}>
 							<RnIcon name="heart" size={25} color="black" />
 						</TouchableOpacity>	
 						<Text style={{marginLeft:10,fontSize:33}}>-</Text>
