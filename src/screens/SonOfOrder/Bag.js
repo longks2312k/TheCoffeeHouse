@@ -18,7 +18,6 @@ export default function Bag() {
 		dispatch({ type: 'REMOVE_CART', data: item })
 	}
 	const onRemoveAll = (item) => () => {
-		dispatch({ type: 'REMOVE_ALL', data: item })
 	}
 	const onUpQuantity = (item) => () => {
 		dispatch({type: 'UP_QUANTITY',data: item })

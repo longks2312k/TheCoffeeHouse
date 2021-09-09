@@ -11,9 +11,9 @@ import { useSelector, useDispatch } from "react-redux";
 export default function Wishlist() {
 
 	const dispatch = useDispatch();
-	const productList = useSelector((store) => store.cartReducer.products);
+	const productWishlist = useSelector((store) => store.wishlistReducer.products);
 	const onRemoveItem = (item) => () => {
-		dispatch({ type: 'REMOVE_CART', data: item })
+		dispatch({ type: 'REMOVE_CART_WL', data: item })
 	}
 
 	const renderItem = ({ item }) => {
@@ -43,7 +43,7 @@ export default function Wishlist() {
 				<View>
 					<FlatList
 						style={{ backgroundColor: '#ececec', }}
-						data={productList}
+						data={productWishlist}
 						renderItem={renderItem}
 						keyExtractor={item => item._id?.toString()}
 						showsVerticalScrollIndicator={false}

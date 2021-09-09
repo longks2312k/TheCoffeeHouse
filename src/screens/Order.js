@@ -26,10 +26,10 @@ export default function Product({ navigation }) {
 		setIsVisible(false)
 	}
 	const onAddToBag = (item) => () => {
-		dispatch({type: 'ADD_CART',data: {...item,quantity: 1 } })
+		dispatch({ type: 'ADD_CART', data: { ...item, quantity: 1 } })
 	}
 	const onAddToWishlist = (item) => () => {
-		dispatch({type: 'ADD_CART',data: item })
+		dispatch({ type: 'ADD_CART_WL', data: { ...item, quantity: 1 }})
 	}
 
 	useEffect(() => {
@@ -47,31 +47,32 @@ export default function Product({ navigation }) {
 
 		callGetProductList()
 	}, [])
-	
+
 
 	const renderItem = ({ item }) => (
-		
-			<View style={{ flex: 1, margin: 5, flexDirection: 'row-reverse', borderRadius: 10, backgroundColor: 'white', padding: 10,width: '95%',marginRight:10 }}>
+
+		<View style={{ flex: 1, }}>
+			<TouchableOpacity style={{ margin: 5, flexDirection: 'row-reverse', borderRadius: 10, backgroundColor: 'white', padding: 10, width: '95%', marginRight: 10 }}>
 				<Image
 					style={{ height: 120, width: '30%', borderRadius: 10 }}
 					source={{ uri: item.image }}
 				/>
 				<View style={{ width: '60%', marginRight: 30 }}>
-					<Text /*onPress={onTouch}*/ style={{ fontSize: 18, marginTop: 10, fontWeight: 'bold' }}>{item.product_name}</Text>
-					<Text ellipsizeMode='tail' numberOfLines={2} style={{ fontSize: 18, marginTop: 2 }}>{item.description}đ</Text>
-					<View style={{flexDirection:'row'}}>
-						<Text style={{ fontSize: 18, marginTop: 13 }}>Giá: {item.price}</Text>
-						<TouchableOpacity onPress={onAddToWishlist(item)} style={{ marginLeft:20, height: 40, width: 40, borderRadius: 40 / 2, backgroundColor: '#ececec', marginRight: 5,marginTop:5, justifyContent: 'center', alignItems: 'center', }}>
+					<Text style={{ fontSize: 18, marginTop: 10, fontWeight: 'bold' }}>{item.product_name}</Text>
+					<Text ellipsizeMode='tail' numberOfLines={2} style={{ fontSize: 16, marginTop: 2 }}>{item.description}đ</Text>
+					<Text style={{ fontSize: 18,marginTop:10 }}>Giá: {item.price}</Text>
+					<View style={{ flexDirection: 'row',marginLeft: 90,marginTop:-35}}>
+						<TouchableOpacity onPress={onAddToWishlist(item)} style={{ marginLeft: 20, height: 40, width: 40, borderRadius: 40 / 2, backgroundColor: '#ececec', marginRight: 5, marginTop: 5, justifyContent: 'center', alignItems: 'center', }}>
 							<RnIcon name="heart" size={25} color="black" />
-						</TouchableOpacity>	
-						<Text style={{marginLeft:10,fontSize:33}}>-</Text>
-						<TouchableOpacity onPress={onAddToBag(item)} style={{ marginLeft:15, height: 40, width: 40, borderRadius: 40 / 2, backgroundColor: '#ececec', marginRight: 5,marginTop:5, justifyContent: 'center', alignItems: 'center', }}>
+						</TouchableOpacity>
+						<Text style={{ marginLeft: 10, fontSize: 33 }}>-</Text>
+						<TouchableOpacity onPress={onAddToBag(item)} style={{ marginLeft: 15, height: 40, width: 40, borderRadius: 40 / 2, backgroundColor: '#ececec', marginRight: 5, marginTop: 5, justifyContent: 'center', alignItems: 'center', }}>
 							<RnIcon3 name="cart-plus" size={20} color="black" />
 						</TouchableOpacity>
 					</View>
 				</View>
-				
-			</View>
+			</TouchableOpacity>
+		</View>
 
 	);
 	return (
@@ -80,7 +81,7 @@ export default function Product({ navigation }) {
 				<RnIcon3 style={{ marginLeft: 10 }} name="shipping-fast" size={50} color="orange" />
 				<Text style={{ fontSize: 26, fontWeight: 'bold', marginLeft: 10 }}>Giao Hàng Đến</Text>
 				<RnIcon style={{ marginLeft: 10 }} name="chevron-down-sharp" size={30} color="black" />
-				<TouchableOpacity onPress={() => navigation.navigate('Bag')} style={{ marginLeft:75, height: 50, width: 50, borderRadius: 50 / 2, backgroundColor: '#fff', marginRight: 15, marginVertical: 10, justifyContent: 'center', alignItems: 'center', elevation: 15, shadowColor: '0,0,0, .4', shadowRadius: 1, shadowOpacity: 1, shadowOffset: { height: 1, width: 1 } }}>
+				<TouchableOpacity onPress={() => navigation.navigate('Bag')} style={{ marginLeft: 75, height: 50, width: 50, borderRadius: 50 / 2, backgroundColor: '#fff', marginRight: 15, marginVertical: 10, justifyContent: 'center', alignItems: 'center', elevation: 15, shadowColor: '0,0,0, .4', shadowRadius: 1, shadowOpacity: 1, shadowOffset: { height: 1, width: 1 } }}>
 					<RnIcon2 name="shopping-bag-1" size={25} color="black" />
 				</TouchableOpacity>
 			</View>
@@ -90,7 +91,7 @@ export default function Product({ navigation }) {
 				</TextInput>
 				<TouchableOpacity onPress={onTouch} style={{ height: 50, width: 50, borderRadius: 50 / 2, backgroundColor: 'white', marginLeft: 5, marginVertical: 10, justifyContent: 'center', alignItems: 'center' }}>
 					<RnIcon name="search-outline" size={30} color="black" />
-					
+
 				</TouchableOpacity>
 				<TouchableOpacity onPress={() => navigation.navigate('Wishlist')} style={{ height: 50, width: 50, borderRadius: 50 / 2, backgroundColor: 'white', marginLeft: 5, marginVertical: 10, justifyContent: 'center', alignItems: 'center' }}>
 					<RnIcon name="heart-outline" size={30} color="black" />
@@ -118,7 +119,7 @@ export default function Product({ navigation }) {
 
 			</ScrollView>
 			<View style={{ flex: 9 }}>
-					<FlatList	
+				<FlatList
 					style={{ backgroundColor: '#ececec', }}
 					data={product}
 					renderItem={renderItem}
@@ -127,19 +128,19 @@ export default function Product({ navigation }) {
 				/>
 			</View>
 			<Modal
-					testID={'modal'}
-					isVisible={isVisible}
-					onSwipeComplete={onCloseModal}
-					swipeDirection={['up', 'left', 'right', 'down']}
-					style={{ justifyContent: 'flex-end', margin: 0 }}
-				>
-					<View style={{ backgroundColor: 'white', justifyContent: 'center', alignItems: 'center', height: 700 }}>
-						<TouchableOpacity onPress={onCloseModal} style={{ position: 'absolute', top: 0, right: 0 }}>
-							<RnIcon name="close" size={50} color="black" />
-						</TouchableOpacity>
-						<Text style={{ fontSize: 20 }}>Bộ sưu tập quà tặng</Text>
-					</View>
-				</Modal>
+				testID={'modal'}
+				isVisible={isVisible}
+				onSwipeComplete={onCloseModal}
+				swipeDirection={['up', 'left', 'right', 'down']}
+				style={{ justifyContent: 'flex-end', margin: 0 }}
+			>
+				<View style={{ backgroundColor: 'white', justifyContent: 'center', alignItems: 'center', height: 700 }}>
+					<TouchableOpacity onPress={onCloseModal} style={{ position: 'absolute', top: 0, right: 0 }}>
+						<RnIcon name="close" size={50} color="black" />
+					</TouchableOpacity>
+					<Text style={{ fontSize: 20 }}>Bộ sưu tập quà tặng</Text>
+				</View>
+			</Modal>
 		</View>
 	)
 }
