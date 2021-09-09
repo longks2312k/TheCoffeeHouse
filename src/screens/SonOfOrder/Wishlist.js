@@ -64,7 +64,16 @@ export default function Wishlist() {
 			<View style={{ height: 70, flexDirection: 'row', backgroundColor: 'white',justifyContent:'center', alignItems: 'center',borderBottomWidth:2,borderColor:'#ececec'}}>
 				<Text style={{ fontSize: 26, fontWeight: 'bold', marginLeft: 10 }}>Wishlist</Text>
 			</View>
-			
+			<SafeAreaView style={{ flex: 1 }}>
+				<View>
+					<FlatList
+						style={{ marginTop: 10 }}
+						data={DATA}
+						renderItem={renderItem}
+						keyExtractor={item => item.id}
+					/>
+				</View>
+			</SafeAreaView>
 		</View>
 	)
 }

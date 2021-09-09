@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { View, Text, FlatList, StyleSheet, StatusBar, TouchableOpacity, SafeAreaView, Image, Dimensions, ScrollView, ViewBase, TextInput } from 'react-native'
+
+import axios from 'axios';
+import { getImage } from './utils/index';
+import Modal from 'react-native-modal';
+import { getProductList } from './services/Api';
+import { useSelector, useDispatch } from "react-redux";
+
 import RnIcon from 'react-native-vector-icons/Ionicons';
 import RnIcon1 from 'react-native-vector-icons/MaterialCommunityIcons';
 import RnIcon2 from 'react-native-vector-icons/Fontisto';
-import RnIcon3 from 'react-native-vector-icons/FontAwesome5'
-import axios from 'axios'
-import { getImage } from './utils/index'
-import Modal from 'react-native-modal';
-import { getProductList } from './services/Api'
+import RnIcon3 from 'react-native-vector-icons/FontAwesome5';
 
 
 export default function Product({ navigation }) {
@@ -15,11 +18,15 @@ export default function Product({ navigation }) {
 	const [product, setProduct] = useState([])
 	const [isVisible, setIsVisible] = useState(false)
 	const [namePd, setNamePd] = useState()
+	const dispatch = useDispatch();
 	const onTouch = () => {
 		setIsVisible(true)
 	}
 	const onCloseModal = () => {
 		setIsVisible(false)
+	}
+	const onAddToBag = (item) => () => {
+		dispatch({type: 'ADD_CART',data: {...item,quantity: 1 } })
 	}
 
 	useEffect(() => {
@@ -27,7 +34,7 @@ export default function Product({ navigation }) {
 		const callGetProductList = async () => {
 			try {
 				const response = await getProductList();
-				console.log('rs', response.data.data);
+				//console.log('rs', response.data.data);
 				setProduct(response.data.data)
 
 			} catch (error) {
@@ -37,6 +44,7 @@ export default function Product({ navigation }) {
 
 		callGetProductList()
 	}, [])
+	
 
 	const renderItem = ({ item }) => (
 		
@@ -54,7 +62,7 @@ export default function Product({ navigation }) {
 							<RnIcon name="heart" size={25} color="black" />
 						</TouchableOpacity>	
 						<Text style={{marginLeft:10,fontSize:33}}>-</Text>
-						<TouchableOpacity style={{ marginLeft:15, height: 40, width: 40, borderRadius: 40 / 2, backgroundColor: '#ececec', marginRight: 5,marginTop:5, justifyContent: 'center', alignItems: 'center', }}>
+						<TouchableOpacity onPress={onAddToBag(item)} style={{ marginLeft:15, height: 40, width: 40, borderRadius: 40 / 2, backgroundColor: '#ececec', marginRight: 5,marginTop:5, justifyContent: 'center', alignItems: 'center', }}>
 							<RnIcon3 name="cart-plus" size={20} color="black" />
 						</TouchableOpacity>
 					</View>
@@ -107,8 +115,7 @@ export default function Product({ navigation }) {
 
 			</ScrollView>
 			<View style={{ flex: 9 }}>
-					<FlatList
-						
+					<FlatList	
 					style={{ backgroundColor: '#ececec', }}
 					data={product}
 					renderItem={renderItem}
