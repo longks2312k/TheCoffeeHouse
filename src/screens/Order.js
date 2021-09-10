@@ -29,7 +29,7 @@ export default function Product({ navigation }) {
 		dispatch({ type: 'ADD_CART', data: { ...item, quantity: 1 } })
 	}
 	const onAddToWishlist = (item) => () => {
-		dispatch({ type: 'ADD_CART_WL', data: { ...item, quantity: 1 }})
+		dispatch({ type: 'ADD_CART_WL', data: { ...item, quantity:  1 }})
 	}
 
 	useEffect(() => {

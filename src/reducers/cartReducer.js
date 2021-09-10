@@ -10,7 +10,7 @@ export default function cartReducer(state = initialState, action) {
       const productList = isExist
         ? state.products?.map(e => {
           if (e._id === action.data._id) {
-            return { ...e, quantity: e.quantity + 1 }
+            return { ...e, quantity: e.quantity + 1}
           } else return e
         }) : [...state.products, action.data]
       return {
@@ -20,7 +20,21 @@ export default function cartReducer(state = initialState, action) {
       return {
         products: state.products?.filter(e => e?._id !== action.data?._id)
       };
-
+    case "UP_QUANTITY":
+      return {
+        products: state.products.map(e => e._id === action.data._id
+          ? { ...e, quantity: e.quantity + 1}
+          : e
+        ),
+      };
+    case "DOWN_QUANTITY":
+      const gia = action.data.price
+      return {
+        products: state.products.map(e => e._id === action.data._id
+          ?  { ...e, quantity: e.quantity !== 1 ? e.quantity - 1 : 1}
+          : e
+        ),
+      };
     default:
       return state;
   }
