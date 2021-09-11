@@ -15,6 +15,9 @@ export default function Wishlist() {
 	const onRemoveItem = (item) => () => {
 		dispatch({ type: 'REMOVE_CART_WL', data: item })
 	}
+	const onRemoveAll =  () => {
+		dispatch({ type: 'REMOVE_ALL' })
+	}
 
 	const renderItem = ({ item }) => {
 		return (
@@ -49,6 +52,13 @@ export default function Wishlist() {
 						showsVerticalScrollIndicator={false}
 					/>
 				</View>
+				<TouchableOpacity onPress={onRemoveAll} style={{ marginHorizontal:10, backgroundColor: '#fff',  marginVertical: 10, justifyContent: 'center', alignItems: 'center',height:60,borderRadius:20 }}>
+					<View style={{flexDirection:'row',justifyContent:'center',alignItems:'center'}}>
+						<RnIcon1 name="delete" size={40} color="black" />
+						<Text style={{fontSize:26}}>Remove All</Text>
+					</View>
+					
+				</TouchableOpacity>
 			</SafeAreaView>
 		</View>
 	)

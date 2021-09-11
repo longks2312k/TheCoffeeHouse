@@ -21,6 +21,10 @@ export default function cartReducer(state = initialState, action) {
       return {
         products: productWishlist
       };
+    case "REMOVE_ALL":
+      return {
+        products: []
+      };
 
     default:
       return state;
