@@ -15,7 +15,9 @@ export default function Bag() {
 
 	const dispatch = useDispatch();
 	const productList = useSelector((store) => store.cartReducer.products);
-	console.log('productList', productList)
+	const totalMoney = productList.reduce((acc, ele) => acc + Number(ele.price) * ele.quantity, 0)
+	const totalItem = productList.reduce((acc, ele) => acc + ele.quantity, 0)
+
 	const onRemoveItem = (item) => () => {
 		dispatch({ type: 'REMOVE_CART', data: item })
 	}
@@ -63,6 +65,17 @@ export default function Bag() {
 			<View style={{ height: 70, flexDirection: 'row', backgroundColor: 'white', justifyContent: 'center', alignItems: 'center', borderBottomWidth: 2, borderColor: '#ececec' }}>
 				<Text style={{ fontSize: 26, fontWeight: 'bold', marginLeft: 10 }}>Your Bag</Text>
 			</View>
+			{productList?.length ? <View style={{ height: 100, paddingHorizontal: 15, paddingVertical: 15, borderTopWidth: 1, borderColor: '#ececec', backgroundColor: 'white' }}>
+				<View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+					<Text style={{ fontSize: 22, fontWeight: 'bold' }}>Total item: </Text>
+					<Text style={{ fontSize: 22, fontWeight: 'bold' }}>{totalItem}</Text>
+
+				</View>
+				<View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 10 }}>
+					<Text style={{ fontSize: 22, fontWeight: 'bold' }}>Total money: </Text>
+					<Text style={{ fontSize: 22, fontWeight: 'bold' }}>{totalMoney}đ</Text>
+				</View>
+			</View> : null}
 			<SafeAreaView style={{ flex: 1 }}>
 				<View>
 					<FlatList
@@ -72,12 +85,16 @@ export default function Bag() {
 						keyExtractor={item => item._id?.toString()}
 						showsVerticalScrollIndicator={false}
 						ListFooterComponent={
-							<TouchableOpacity onPress={onRemoveAll} style={{ marginHorizontal: 10, backgroundColor: '#fff', marginVertical: 10, justifyContent: 'center', alignItems: 'center', height: 60, borderRadius: 20 }}>
-								<View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-									<RnIcon1 name="delete" size={40} color="black" />
-									<Text style={{ fontSize: 26 }}>Remove All</Text>
-								</View>
-							</TouchableOpacity>
+							<View>
+								{productList?.length ?
+									<TouchableOpacity onPress={onRemoveAll} style={{ marginHorizontal: 10, backgroundColor: '#fff', marginVertical: 10, justifyContent: 'center', alignItems: 'center', height: 60, borderRadius: 20 }}>
+										<View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+											<RnIcon1 name="delete" size={40} color="black" />
+											<Text style={{ fontSize: 26 }}>Remove All</Text>
+										</View>
+									</TouchableOpacity> : null}
+
+							</View>
 						}
 					/>
 				</View>
