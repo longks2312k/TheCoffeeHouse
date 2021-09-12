@@ -77,13 +77,16 @@ export default function Product({ navigation }) {
 	);
 	return (
 		<View style={{ flex: 1, backgroundColor: '#ececec' }}>
-			<View style={{ height: 70, flexDirection: 'row', backgroundColor: 'white', alignItems: 'center' }}>
-				<RnIcon3 style={{ marginLeft: 10 }} name="shipping-fast" size={50} color="orange" />
-				<Text style={{ fontSize: 26, fontWeight: 'bold', marginLeft: 10 }}>Giao Hàng Đến</Text>
-				<RnIcon style={{ marginLeft: 10 }} name="chevron-down-sharp" size={30} color="black" />
-				<TouchableOpacity onPress={() => navigation.navigate('Bag')} style={{ marginLeft: 75, height: 50, width: 50, borderRadius: 50 / 2, backgroundColor: '#fff', marginRight: 15, marginVertical: 10, justifyContent: 'center', alignItems: 'center', elevation: 15, shadowColor: '0,0,0, .4', shadowRadius: 1, shadowOpacity: 1, shadowOffset: { height: 1, width: 1 } }}>
-					<RnIcon2 name="shopping-bag-1" size={25} color="black" />
-				</TouchableOpacity>
+			<View style={{ height: 70, flexDirection: 'row', backgroundColor: 'white', alignItems: 'center' , justifyContent: 'space-between'}}>
+				<Text style={{ fontSize: 30, fontWeight: 'bold', marginLeft: 20 }}>Giao Hàng</Text>
+				<View style={{flexDirection:'row'}}>
+					<TouchableOpacity onPress={() => navigation.navigate('Bag')} style={{  height: 50, width: 50, borderRadius: 50 / 2, backgroundColor: '#fff', marginRight: 15, marginVertical: 10, justifyContent: 'center', alignItems: 'center', elevation: 15, shadowColor: '0,0,0, .4', shadowRadius: 1, shadowOpacity: 1, shadowOffset: { height: 1, width: 1 } }}>
+						<RnIcon2 name="shopping-bag-1" size={25} color="black" />
+					</TouchableOpacity>
+					<TouchableOpacity style={{ height: 50, width: 50, borderRadius: 50 / 2, backgroundColor: '#fff', marginRight: 15, marginVertical: 10, justifyContent: 'center', alignItems: 'center', elevation: 15, shadowColor: '0,0,0, .4', shadowRadius: 1, shadowOpacity: 1, shadowOffset: { height: 1, width: 1 } }}>
+						<RnIcon name="notifications-outline" size={30} color="black" />
+					</TouchableOpacity>
+				</View>
 			</View>
 			<View style={{ borderBottomWidth: 0.2, flexDirection: "row", height: 70, justifyContent: 'center', alignItems: 'center', borderColor: "gray" }}>
 				<TextInput placeholder="  Search" style={{ height: 50, width: '65%', backgroundColor: 'white', borderRadius: 20, fontSize: 18 }}>
