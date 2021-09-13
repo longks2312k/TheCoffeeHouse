@@ -33,7 +33,7 @@ export default function Login({navigation}) {
 			const response = await cfLogin({phone: phone,otp:code});
 			console.log('rs', response.data); 
 			setIsVisible(false)
-			navigation.navigate('Other')
+			navigation.navigate('Home')
 		} catch (error) {
 			console.error(error.response);
 		}
@@ -61,18 +61,18 @@ export default function Login({navigation}) {
 							secureTextEntry={false} 
 							value={phone}
 							onChangeText={onChangePhone}
-							style={{ height: 50, width: '90%', fontSize: 20, borderColor: 'gray', borderWidth: 1, marginLeft: 5, fontFamily: 'Times New Roman', borderRadius: 10, marginBottom: 10, marginTop:40}} 
+							style={{ height: 60, width: '90%', fontSize: 24, borderColor: 'gray', borderWidth: 1, marginLeft: 5, fontFamily: 'Times New Roman', borderRadius: 10, marginBottom: 10, marginTop:40}} 
 						/>
-						<TouchableOpacity onPress={onVerifyPhone} style={{ height: 50, width: '90%', borderColor: 'gray', borderWidth: 1, marginLeft: 5, borderRadius: 10, marginBottom: 10,marginTop:20, justifyContent: 'center', alignItems: 'center', backgroundColor: "gray" }}>
-							<Text style={{ fontSize: 20, color: 'white' }}>Đăng NHập</Text>
+						<TouchableOpacity onPress={onVerifyPhone} style={{ height: 60, width: '90%', borderColor: 'gray', borderWidth: 1, marginLeft: 5, borderRadius: 10, marginBottom: 10,marginTop:20, justifyContent: 'center', alignItems: 'center', backgroundColor: "gray" }}>
+							<Text style={{ fontSize: 24, color: 'white' }}>Đăng Nhập</Text>
 						</TouchableOpacity>
 						<View style={{ flexDirection: 'row',marginTop:30 }}>
 							<View style={{ borderWidth: 1, width: '34%', height: 2, marginRight: 10, marginTop: 12, borderColor: "#d8d5d5" }}></View>
-							<Text style={{ fontSize: 18 }}>Hoặc</Text>
+							<Text style={{ fontSize: 24 }}>Hoặc</Text>
 							<View style={{ borderWidth: 1, width: '34%', height: 2, marginLeft: 10, marginTop: 12, borderColor: "#d8d5d5" }}></View>
 						</View>
-						<TouchableOpacity style={{ height: 50, width: '90%', borderColor: 'blue', borderWidth: 1, marginLeft: 5, borderRadius: 10, marginBottom: 20, marginTop: 40, justifyContent: 'center', alignItems: 'center', backgroundColor: "blue" }}>
-							<Text style={{ fontSize: 18, color: 'white' }}>Tiếp tục bằng Facebook</Text>
+						<TouchableOpacity style={{ height: 60, width: '90%', borderColor: 'blue', borderWidth: 1, marginLeft: 5, borderRadius: 10, marginBottom: 20, marginTop: 40, justifyContent: 'center', alignItems: 'center', backgroundColor: "blue" }}>
+							<Text style={{ fontSize: 24, color: 'white' }}>Tiếp tục bằng Facebook</Text>
 						</TouchableOpacity>
 					</View>
 				</View>
@@ -100,10 +100,10 @@ export default function Login({navigation}) {
 							secureTextEntry={false} 
 							value={code}
 							onChangeText={onChangePhone}
-							style={{ height: 50, width: '90%', fontSize: 20, borderColor: 'gray', borderWidth: 1, marginLeft: 5, fontFamily: 'Times New Roman', borderRadius: 10, marginBottom: 20,justifyContent:'center',alignItems:'center' }} 
+							style={{ height: 60, width: '90%', fontSize: 22, borderColor: 'gray', borderWidth: 1, marginLeft: 5, fontFamily: 'Times New Roman', borderRadius: 10, marginBottom: 20,justifyContent:'center',alignItems:'center' }} 
 						/>
-						<TouchableOpacity onPress={onVerifyCode} style={{ height: 50, width: '90%', borderColor: 'gray', borderWidth: 1, marginLeft: 5, borderRadius: 10, marginBottom: 20, justifyContent: 'center', alignItems: 'center', backgroundColor: "gray" }}>
-							<Text style={{ fontSize: 20, color: 'white' }}>Xác Nhận</Text>
+						<TouchableOpacity onPress={onVerifyCode} style={{ height: 60, width: '90%', borderColor: 'gray', borderWidth: 1, marginLeft: 5, borderRadius: 10, marginBottom: 20, justifyContent: 'center', alignItems: 'center', backgroundColor: "gray" }}>
+							<Text style={{ fontSize: 22, color: 'white' }}>Xác Nhận</Text>
 						</TouchableOpacity>
 						
 				</View>
