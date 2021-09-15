@@ -18,8 +18,7 @@ export default function Store({ navigation }) {
 		
 		const callGetStore = async () => {
 			try {
-				const response = await getStore();
-				console.log('rs', response.data); 
+				const response = await getStore(); 
 				setProduct(response.data)
 
 			} catch (error) {

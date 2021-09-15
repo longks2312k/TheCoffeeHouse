@@ -17,7 +17,6 @@ export default function Product({ navigation }) {
 
 	const [product, setProduct] = useState([])
 	const [isVisible, setIsVisible] = useState(false)
-	const [namePd, setNamePd] = useState()
 	const dispatch = useDispatch();
 	const onTouch = () => {
 		setIsVisible(true)
@@ -37,7 +36,6 @@ export default function Product({ navigation }) {
 		const callGetProductList = async () => {
 			try {
 				const response = await getProductList();
-				//console.log('rs', response.data.data);
 				setProduct(response.data.data)
 
 			} catch (error) {
@@ -47,12 +45,15 @@ export default function Product({ navigation }) {
 
 		callGetProductList()
 	}, [])
+	const onMoveToDetail = (data) => () =>{
+		navigation.navigate('Detail', {detail: data})
+	}
 
 
 	const renderItem = ({ item }) => (
 
 		<View style={{ flex: 1, }}>
-			<TouchableOpacity style={{ margin: 5, flexDirection: 'row-reverse', borderRadius: 10, backgroundColor: 'white', padding: 10, width: '95%', marginRight: 10 }}>
+			<TouchableOpacity onPress={onMoveToDetail(item)} style={{ margin: 5, flexDirection: 'row-reverse', borderRadius: 10, backgroundColor: 'white', padding: 10, width: '95%', marginRight: 10 }}>
 				<Image
 					style={{ height: 120, width: '30%', borderRadius: 10 }}
 					source={{ uri: item.image }}
