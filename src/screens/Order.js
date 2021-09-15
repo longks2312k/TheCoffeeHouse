@@ -58,17 +58,13 @@ export default function Product({ navigation }) {
 					style={{ height: 120, width: '30%', borderRadius: 10 }}
 					source={{ uri: item.image }}
 				/>
-				<View style={{ width: '60%', marginRight: 30 }}>
+				<View style={{ width: '65%', marginRight: 10 }}>
 					<Text style={{ fontSize: 18, marginTop: 10, fontWeight: 'bold' }}>{item.product_name}</Text>
 					<Text ellipsizeMode='tail' numberOfLines={2} style={{ fontSize: 16, marginTop: 2 }}>{item.description}đ</Text>
-					<Text style={{ fontSize: 18,marginTop:10 }}>Giá: {item.price}</Text>
+					<Text style={{ fontSize: 18,marginTop:10 }}>Giá: {item.price}đ</Text>
 					<View style={{ flexDirection: 'row',marginLeft: 90,marginTop:-35}}>
-						<TouchableOpacity onPress={onAddToWishlist(item)} style={{ marginLeft: 20, height: 40, width: 40, borderRadius: 40 / 2, backgroundColor: '#ececec', marginRight: 5, marginTop: 5, justifyContent: 'center', alignItems: 'center', }}>
+						<TouchableOpacity onPress={onAddToWishlist(item)} style={{ marginLeft: 120, height: 40, width: 40, borderRadius: 40 / 2, backgroundColor: '#ececec', marginRight: 5, marginTop: 5, justifyContent: 'center', alignItems: 'center', }}>
 							<RnIcon name="heart" size={25} color="black" />
-						</TouchableOpacity>
-						<Text style={{ marginLeft: 10, fontSize: 33 }}>-</Text>
-						<TouchableOpacity onPress={onAddToBag(item)} style={{ marginLeft: 15, height: 40, width: 40, borderRadius: 40 / 2, backgroundColor: '#ececec', marginRight: 5, marginTop: 5, justifyContent: 'center', alignItems: 'center', }}>
-							<RnIcon3 name="cart-plus" size={20} color="black" />
 						</TouchableOpacity>
 					</View>
 				</View>
