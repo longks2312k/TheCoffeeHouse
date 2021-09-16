@@ -29,7 +29,7 @@ export default function Wishlist() {
 				<View style={{ width: '70%', marginRight: 30 }}>
 					<Text /*onPress={onTouch}*/ style={{ fontSize: 20, marginLeft: 10, fontWeight: 'bold' }}>{item.product_name}</Text>
 					<Text style={{ fontSize: 20, marginTop: 10, marginLeft: 10, }}>Giá: {item.price}đ</Text>
-					<TouchableOpacity onPress={onRemoveItem(item)} style={{ marginLeft: 225, backgroundColor: '#fff', marginTop: 10, marginRight: 15, marginVertical: 10, justifyContent: 'center', alignItems: 'center', }}>
+					<TouchableOpacity onPress={onRemoveItem(item)} style={{ marginLeft: 205, backgroundColor: '#fff', marginTop: -20, marginRight: 15, marginVertical: 10, justifyContent: 'center', alignItems: 'center', }}>
 						<RnIcon1 name="delete" size={40} color="black" />
 					</TouchableOpacity>
 				</View>
@@ -50,15 +50,19 @@ export default function Wishlist() {
 						renderItem={renderItem}
 						keyExtractor={item => item._id?.toString()}
 						showsVerticalScrollIndicator={false}
+						ListFooterComponent={
+							<View>
+								{productWishlist?.length ?
+									<TouchableOpacity onPress={onRemoveAll} style={{ marginHorizontal: 10, backgroundColor: '#fff', marginVertical: 10, justifyContent: 'center', alignItems: 'center', height: 60, borderRadius: 20 }}>
+										<View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+											<RnIcon1 name="delete" size={40} color="black" />
+											<Text style={{ fontSize: 26 }}>Remove All</Text>
+										</View>
+									</TouchableOpacity> : null}
+							</View>
+						}
 					/>
 				</View>
-				<TouchableOpacity onPress={onRemoveAll} style={{ marginHorizontal:10, backgroundColor: '#fff',  marginVertical: 10, justifyContent: 'center', alignItems: 'center',height:60,borderRadius:20 }}>
-					<View style={{flexDirection:'row',justifyContent:'center',alignItems:'center'}}>
-						<RnIcon1 name="delete" size={40} color="black" />
-						<Text style={{fontSize:26}}>Remove All</Text>
-					</View>
-					
-				</TouchableOpacity>
 			</SafeAreaView>
 		</View>
 	)

@@ -17,9 +17,11 @@ import Store from '../screens/Store'
 import Ticket from '../screens/Ticket'
 import Wishlist from '../screens/SonOfOrder/Wishlist'
 import Detail from '../screens/SonOfOrder/Detail'
+import storeDetail from '../screens/SonOfOrder/storeDetail'
 import Bag from '../screens/SonOfOrder/Bag'
 import Login from '../screens/Login'
 import Home from '../screens/Home'
+
 
 
 
@@ -85,6 +87,7 @@ function StoreStackScreen() {
     <StoreStack.Navigator screenOptions={{headerShown:false}}>
 			<StoreStack.Screen name="Store" component={Store} />
       <StoreStack.Screen name="Ticket" component={Ticket} />
+			<StoreStack.Screen name="storeDetail" component={storeDetail} />
     </StoreStack.Navigator>
   );
 }
@@ -93,7 +96,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tap.Navigator 
-				initialRouteName='Đặt Hàng'
+				initialRouteName='Cửa Hàng'
 				screenOptions={({ route }) => ({
 				tabBarStyle:{height:63,padding:8},
 				tabBarLabelStyle:{fontSize:13},

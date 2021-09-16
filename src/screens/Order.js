@@ -18,15 +18,19 @@ export default function Product({ navigation }) {
 	const [product, setProduct] = useState([])
 	const [isVisible, setIsVisible] = useState(false)
 	const dispatch = useDispatch();
+	
 	const onTouch = () => {
 		setIsVisible(true)
 	}
+
 	const onCloseModal = () => {
 		setIsVisible(false)
 	}
+
 	const onAddToBag = (item) => () => {
 		dispatch({ type: 'ADD_CART', data: { ...item, quantity: 1 } })
 	}
+
 	const onAddToWishlist = (item) => () => {
 		dispatch({ type: 'ADD_CART_WL', data: { ...item, quantity:  1 }})
 	}
