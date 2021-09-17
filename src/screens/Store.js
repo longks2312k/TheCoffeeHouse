@@ -6,6 +6,7 @@ import RnIcon2 from 'react-native-vector-icons/Fontisto';
 import { getStore } from './services/Api'
 import { getImage } from './utils/index'
 import { useSelector, useDispatch } from "react-redux";
+import Loading from '../components/Loading';
 
 export default function Store({ navigation }) {
 
@@ -13,6 +14,7 @@ export default function Store({ navigation }) {
 	const itemWidth = (width - 15) / 2;
 	const [product, setProduct] = useState([])
 	const dispatch = useDispatch();
+	const [isLoading, setIsLoading] = useState(false)
 
 	const onMoveToDetail = (data) => () => {
 		navigation.navigate('storeDetail', { storeDetail: data })
@@ -23,8 +25,10 @@ export default function Store({ navigation }) {
 
 		const callGetStore = async () => {
 			try {
+				setIsLoading(true)
 				const response = await getStore();
 				setProduct(response.data)
+				setIsLoading(false)
 
 			} catch (error) {
 				console.error(error);
@@ -51,6 +55,7 @@ export default function Store({ navigation }) {
 	);
 	return (
 		<View style={{ flex: 1, backgroundColor: '#ececec' }}>
+			{isLoading && <Loading />}
 			<View style={{ height: 70, flexDirection: 'row', backgroundColor: 'white', justifyContent: 'space-between' }}>
 				<View style={{ justifyContent: "center", alignItems: 'center', marginLeft: 20 }}>
 					<Text style={{ fontWeight: 'bold', fontSize: 30 }}>Cửa Hàng</Text>

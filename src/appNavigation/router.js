@@ -96,7 +96,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tap.Navigator 
-				initialRouteName='Cửa Hàng'
+				initialRouteName='Trang Chủ'
 				screenOptions={({ route }) => ({
 				tabBarStyle:{height:63,padding:8},
 				tabBarLabelStyle:{fontSize:13},
@@ -118,7 +118,7 @@ export default function App() {
 						iconName = focused ? 'format-list-bulleted' : 'format-list-bulleted';
 					}
 
-			return <RnIcon1 name={iconName} size={38} color={color} />;
+			return <RnIcon1 name={iconName} size={35} color={color} />;
 				},
 			tabBarActiveTintColor: 'orange',
 			tabBarInactiveTintColor: 'gray',

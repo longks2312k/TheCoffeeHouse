@@ -6,6 +6,7 @@ import { getImage } from './utils/index';
 import Modal from 'react-native-modal';
 import { getProductList } from './services/Api';
 import { useSelector, useDispatch } from "react-redux";
+import Loading from '../components/Loading';
 
 import RnIcon from 'react-native-vector-icons/Ionicons';
 import RnIcon1 from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -18,6 +19,7 @@ export default function Product({ navigation }) {
 	const [product, setProduct] = useState([])
 	const [isVisible, setIsVisible] = useState(false)
 	const dispatch = useDispatch();
+	const [isLoading, setIsLoading] = useState(false)
 	
 	const onTouch = () => {
 		setIsVisible(true)
@@ -39,8 +41,10 @@ export default function Product({ navigation }) {
 
 		const callGetProductList = async () => {
 			try {
+				setIsLoading(true)
 				const response = await getProductList();
 				setProduct(response.data.data)
+				setIsLoading(false)
 
 			} catch (error) {
 				console.error(error);
@@ -78,6 +82,7 @@ export default function Product({ navigation }) {
 	);
 	return (
 		<View style={{ flex: 1, backgroundColor: '#ececec' }}>
+			{isLoading && <Loading />}
 			<View style={{ height: 70, flexDirection: 'row', backgroundColor: 'white', alignItems: 'center' , justifyContent: 'space-between'}}>
 				<Text style={{ fontSize: 30, fontWeight: 'bold', marginLeft: 20 }}>Giao Hàng</Text>
 				<View style={{flexDirection:'row'}}>
