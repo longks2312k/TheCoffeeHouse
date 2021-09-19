@@ -23,27 +23,6 @@ import Login from '../screens/Login'
 import Home from '../screens/Home'
 
 
-
-
-const styles = StyleSheet.create({
-	wrapper: {
-		height: 210,
-		marginVertical: 10, backgroundColor: '#ececec'
-	},
-	slide1: {
-		flex: 1,
-		alignItems: 'center',
-	},
-	slide2: {
-		flex: 1,
-		alignItems: 'center',
-	},
-	slide3: {
-		flex: 1,
-		alignItems: 'center',
-	},
-})
-
 const HomeStack = createNativeStackNavigator();
 const OrderStack = createNativeStackNavigator();
 const StoreStack = createNativeStackNavigator();

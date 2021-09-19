@@ -82,7 +82,7 @@ export default function Product({ navigation }) {
 	);
 	return (
 		<View style={{ flex: 1, backgroundColor: '#ececec' }}>
-			{isLoading && <Loading />}
+			
 			<View style={{ height: 70, flexDirection: 'row', backgroundColor: 'white', alignItems: 'center' , justifyContent: 'space-between'}}>
 				<Text style={{ fontSize: 30, fontWeight: 'bold', marginLeft: 20 }}>Giao Hàng</Text>
 				<View style={{flexDirection:'row'}}>
@@ -128,6 +128,7 @@ export default function Product({ navigation }) {
 
 			</ScrollView>
 			<View style={{ flex: 9 }}>
+				{isLoading && <Loading />}
 				<FlatList
 					style={{ backgroundColor: '#ececec', }}
 					data={product}

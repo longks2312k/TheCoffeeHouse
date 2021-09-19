@@ -55,7 +55,7 @@ export default function Store({ navigation }) {
 	);
 	return (
 		<View style={{ flex: 1, backgroundColor: '#ececec' }}>
-			{isLoading && <Loading />}
+			
 			<View style={{ height: 70, flexDirection: 'row', backgroundColor: 'white', justifyContent: 'space-between' }}>
 				<View style={{ justifyContent: "center", alignItems: 'center', marginLeft: 20 }}>
 					<Text style={{ fontWeight: 'bold', fontSize: 30 }}>Cửa Hàng</Text>
@@ -80,12 +80,13 @@ export default function Store({ navigation }) {
 				</TouchableOpacity>
 			</View>
 			<SafeAreaView style={{ flex: 1, width: '94%', marginLeft: '3%', borderRadius: 10, }}>
+				{isLoading && <Loading />}
 				<View style={{ backgroundColor: '#ececec' }}>
 					<FlatList
 						style={{ backgroundColor: '#ececec', }}
 						data={product}
 						renderItem={renderItem}
-						keyExtractor={item => item._id?.toString()}
+						keyExtractor={item => item.id?.toString()}
 						showsVerticalScrollIndicator={false}
 					/>
 				</View>
