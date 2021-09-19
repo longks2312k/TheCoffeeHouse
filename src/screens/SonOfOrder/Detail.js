@@ -22,15 +22,15 @@ export default function DetailScreen({ route, navigation }) {
   return (
     <View>
       <Image
-					style={{ height: 400, width: '100%',backgroundColor:'#ececec'}}
+					style={{ height: 400, width: '100%',backgroundColor:'white'}}
 					source={{ uri: detail.image }}
 				/>
-				<View style={{ width: '100%', marginLeft: 10 ,borderTopWidth:2,borderColor:'#ececec'}}>
+				<View style={{ width: '100%', paddingLeft: 10 ,borderTopWidth:2,borderColor:'#ececec',backgroundColor:'white'}}>
 					<Text numberOfLines={1} style={{ fontSize: 26, marginTop: 10, fontWeight: 'bold' }}>{detail.product_name}</Text>
 					<Text ellipsizeMode='tail' numberOfLines={3} style={{ fontSize: 20, marginTop: 2 }}>{detail.description}đ</Text>
 					<Text style={{ fontSize: 24,marginTop:10 }}>Sản xuất vào: {detail.created_at}</Text>
           <Text style={{ fontSize: 24,marginTop:10 }}>Giá: {detail.price}đ</Text>
-					<View style={{ flexDirection: 'row',marginLeft: 20,marginTop:10}}>
+					<View style={{ flexDirection: 'row',paddingLeft: 20,marginTop:10,paddingBottom:10}}>
 						<TouchableOpacity onPress={onAddToBag(detail)} style={{ borderRadius: 20, height: 60, width: '90%', backgroundColor: 'yellow', marginRight: 5, marginTop: 5, justifyContent: 'center', alignItems: 'center', }}>
               <Text style={{ fontSize: 24,fontWeight:'bold'}}>Add To Cart</Text>
 						</TouchableOpacity>

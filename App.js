@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 //Redux
-import { createStore } from "redux";
+import { createStore ,applyMiddleware} from "redux";
+import thunk from 'redux-thunk';
 import { Provider } from "react-redux";
 import { persistStore, persistReducer } from 'redux-persist'
 import { PersistGate } from 'redux-persist/integration/react'
@@ -16,7 +17,7 @@ const persistConfig = {
 }
 
 const persistedReducer = persistReducer(persistConfig, allReducers)
-let store = createStore(persistedReducer);
+let store = createStore(persistedReducer,applyMiddleware(thunk));
 let persistor  = persistStore(store);
 
 export default class App extends Component {
