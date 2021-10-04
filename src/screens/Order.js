@@ -56,10 +56,8 @@ export default function Product({ navigation }) {
 	const onMoveToDetail = (data) => () =>{
 		navigation.navigate('Detail', {detail: data})
 	}
-
-
+	
 	const renderItem = ({ item }) => (
-
 		<View style={{ flex: 1, }}>
 			<TouchableOpacity onPress={onMoveToDetail(item)} style={{ margin: 5, flexDirection: 'row-reverse', borderRadius: 10, backgroundColor: 'white', padding: 10, width: '95%', marginRight: 10 }}>
 				<Image
@@ -68,7 +66,7 @@ export default function Product({ navigation }) {
 				/>
 				<View style={{ width: '65%', marginRight: 10 }}>
 					<Text style={{ fontSize: 18, marginTop: 10, fontWeight: 'bold' }}>{item.product_name}</Text>
-					<Text ellipsizeMode='tail' numberOfLines={2} style={{ fontSize: 16, marginTop: 2 }}>{item.description}đ</Text>
+					<Text ellipsizeMode='tail' numberOfLines={2} style={{ fontSize: 16, marginTop: 2 }}>{item.description}</Text>
 					<Text style={{ fontSize: 18,marginTop:10 }}>Giá: {item.price}đ</Text>
 					<View style={{ flexDirection: 'row',marginLeft: 90,marginTop:-35}}>
 						<TouchableOpacity onPress={onAddToWishlist(item)} style={{ marginLeft: 120, height: 40, width: 40, borderRadius: 40 / 2, backgroundColor: '#ececec', marginRight: 5, marginTop: 5, justifyContent: 'center', alignItems: 'center', }}>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 //Redux
-import { createStore ,applyMiddleware} from "redux";
+import { createStore, applyMiddleware } from "redux";
 import thunk from 'redux-thunk';
 import { Provider } from "react-redux";
 import { persistStore, persistReducer } from 'redux-persist'
@@ -16,18 +16,19 @@ const persistConfig = {
   storage: AsyncStorage,
 }
 
-const persistedReducer = persistReducer(persistConfig, allReducers)
-let store = createStore(persistedReducer,applyMiddleware(thunk));
-let persistor  = persistStore(store);
+  const persistedReducer = persistReducer(persistConfig, allReducers)
 
-export default class App extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <AppNavigation />
-        </PersistGate>
-      </Provider>
-    );
-  }
+  let store = createStore(persistedReducer, applyMiddleware(thunk));
+  let persistor = persistStore(store);
+
+  export default class App extends Component {
+    render() {
+      return (
+        <Provider store={store}>
+          <PersistGate loading={null} persistor={persistor}>
+            <AppNavigation />
+          </PersistGate>
+        </Provider>
+      );
+    }
 }

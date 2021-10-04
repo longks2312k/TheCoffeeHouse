@@ -98,8 +98,7 @@ export default function Login({navigation}) {
 							keyboardType="numeric"
 							placeholder="Mã OTP" 
 							secureTextEntry={false} 
-							value={code}
-							onChangeText={onChangePhone}
+							value={code}						
 							style={{ height: 60, width: '90%', fontSize: 22, borderColor: 'gray', borderWidth: 1, marginLeft: 5, fontFamily: 'Times New Roman', borderRadius: 10, marginBottom: 20,justifyContent:'center',alignItems:'center' }} 
 						/>
 						<TouchableOpacity onPress={onVerifyCode} style={{ height: 60, width: '90%', borderColor: 'gray', borderWidth: 1, marginLeft: 5, borderRadius: 10, marginBottom: 20, justifyContent: 'center', alignItems: 'center', backgroundColor: "gray" }}>
