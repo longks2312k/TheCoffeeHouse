@@ -30,87 +30,87 @@ const OtherStack = createNativeStackNavigator();
 const Tap = createBottomTabNavigator();
 
 function OrderStackScreen() {
-  return (
-    <OrderStack.Navigator screenOptions={{headerShown:false}}>
+	return (
+		<OrderStack.Navigator screenOptions={{ headerShown: false }}>
 			<OrderStack.Screen name="Order" component={Order} />
-      <OrderStack.Screen name="Wishlist" component={Wishlist} />
+			<OrderStack.Screen name="Wishlist" component={Wishlist} />
 			<OrderStack.Screen name="Detail" component={Detail} />
-			<OrderStack.Screen name="Bag" component={Bag}/>
-    </OrderStack.Navigator>
-  );
+			<OrderStack.Screen name="Bag" component={Bag} />
+		</OrderStack.Navigator>
+	);
 }
 
 function OtherStackScreen() {
-  return (
-    <OtherStack.Navigator screenOptions={{headerShown:false}}>
+	return (
+		<OtherStack.Navigator screenOptions={{ headerShown: false }}>
 			<OtherStack.Screen name="Other" component={Other} />
-      <OtherStack.Screen name="Ticket" component={Ticket} />
+			<OtherStack.Screen name="Ticket" component={Ticket} />
 			<OtherStack.Screen name="Login" component={Login} />
-    </OtherStack.Navigator>
-  );
+		</OtherStack.Navigator>
+	);
 }
 
 function HomeStackScreen() {
-  return (
-    <HomeStack.Navigator screenOptions={{headerShown:false}}>
+	return (
+		<HomeStack.Navigator screenOptions={{ headerShown: false }}>
 			<HomeStack.Screen name="Home" component={Home} />
-      <HomeStack.Screen name="Order" component={Order} />
-			<HomeStack.Screen name="Bag" component={Bag}/>
+			<HomeStack.Screen name="Order" component={Order} />
+			<HomeStack.Screen name="Bag" component={Bag} />
 			<HomeStack.Screen name="Ticket" component={Ticket} />
-    </HomeStack.Navigator>
-  );
+		</HomeStack.Navigator>
+	);
 }
 
 function StoreStackScreen() {
-  return (
-    <StoreStack.Navigator screenOptions={{headerShown:false}}>
+	return (
+		<StoreStack.Navigator screenOptions={{ headerShown: false }}>
 			<StoreStack.Screen name="Store" component={Store} />
-      <StoreStack.Screen name="Ticket" component={Ticket} />
+			<StoreStack.Screen name="Ticket" component={Ticket} />
 			<StoreStack.Screen name="storeDetail" component={storeDetail} />
-    </StoreStack.Navigator>
-  );
+		</StoreStack.Navigator>
+	);
 }
 
 export default function App() {
-  return (
-    <NavigationContainer>
-      <Tap.Navigator 
+	return (
+		<NavigationContainer>
+			<Tap.Navigator
 				initialRouteName='Trang Chủ'
 				screenOptions={({ route }) => ({
-				tabBarStyle:{height:63,padding:8},
-				tabBarLabelStyle:{fontSize:13},
-				tabBarIcon: ({ focused, color, size }) => {
-					let iconName;
+					tabBarStyle: { height: 60, padding: 8 },
+					tabBarLabelStyle: { fontSize: 13 },
+					tabBarIcon: ({ focused, color, size }) => {
+						let iconName;
 
-					if (route.name === 'Trang Chủ') {
-						iconName = focused ? 'home' : 'home-outline';
-					} else if (route.name === 'Đặt Hàng') {
-						iconName = focused ? 'coffee' : 'coffee-outline';
-					}
-					else if (route.name === 'Cửa Hàng') {
-						iconName = focused ? 'storefront' : 'storefront-outline';
-					}
-					else if(route.name === 'Tích Điểm') {
-						iconName = focused ? 'ticket-confirmation' : 'ticket-confirmation-outline';
-					}
-					else if (route.name === 'Khác') {
-						iconName = focused ? 'format-list-bulleted' : 'format-list-bulleted';
-					}
+						if (route.name === 'Trang Chủ') {
+							iconName = focused ? 'home' : 'home-outline';
+						} else if (route.name === 'Đặt Hàng') {
+							iconName = focused ? 'coffee' : 'coffee-outline';
+						}
+						else if (route.name === 'Cửa Hàng') {
+							iconName = focused ? 'storefront' : 'storefront-outline';
+						}
+						else if (route.name === 'Tích Điểm') {
+							iconName = focused ? 'ticket-confirmation' : 'ticket-confirmation-outline';
+						}
+						else if (route.name === 'Khác') {
+							iconName = focused ? 'format-list-bulleted' : 'format-list-bulleted';
+						}
 
-			return <RnIcon1 name={iconName} size={35} color={color} />;
-				},
-			tabBarActiveTintColor: 'orange',
-			tabBarInactiveTintColor: 'gray',
-			headerShown:false,
-			
-			})}
+						return <RnIcon1 name={iconName} size={32} color={color} />;
+					},
+					tabBarActiveTintColor: 'orange',
+					tabBarInactiveTintColor: 'gray',
+					headerShown: false,
+
+				})}
 			>
-        <Tap.Screen name="Trang Chủ" component={HomeStackScreen} />
-        <Tap.Screen name="Đặt Hàng" component={OrderStackScreen} />
-        <Tap.Screen name="Cửa Hàng" component={StoreStackScreen} />
-        <Tap.Screen name="Tích Điểm" component={Ticket} />
-        <Tap.Screen name="Khác" component={OtherStackScreen} />
-      </Tap.Navigator>
-    </NavigationContainer>
-  )
+				<Tap.Screen name="Trang Chủ" component={HomeStackScreen} />
+				<Tap.Screen name="Đặt Hàng" component={OrderStackScreen} />
+				<Tap.Screen name="Cửa Hàng" component={StoreStackScreen} />
+				<Tap.Screen name="Tích Điểm" component={Ticket} />
+				<Tap.Screen name="Khác" component={OtherStackScreen} />
+			</Tap.Navigator>
+		</NavigationContainer>
+	)
 }
