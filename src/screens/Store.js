@@ -39,22 +39,22 @@ export default function Store({ navigation }) {
 
 	const renderItem = ({ item }) => (
 		<View style={{ flex: 1, }}>
-			<TouchableOpacity onPress={onMoveToDetail(item)} style={{ flex: 1, margin: 5, flexDirection: 'row', borderRadius: 10, backgroundColor: 'white', padding: 10, }}>
+			<TouchableOpacity onPress={onMoveToDetail(item)} style={{ flex: 1, margin: 5, flexDirection: 'row', borderRadius: 5, backgroundColor: 'white', padding: 10, }}>
 				<Image
-					style={{ height: 120, width: '30%', borderRadius: 10 }}
+					style={{ flex:1, height: 110,width:110, borderRadius: 5 ,margin:5}}
 					source={{ uri: getImage(item.image_1) }}
 				/>
-				<View style={{ width: '60%', marginLeft: 15 }}>
+				<View style={{ flex:2, marginLeft: 15 }}>
 					<Text ellipsizeMode='tail' numberOfLines={1} style={{ fontSize: 18, marginTop: 8, fontWeight: 'bold' }}>{item.name}</Text>
 					<Text ellipsizeMode='tail' numberOfLines={1} style={{ fontSize: 18, marginTop: 2 }}>{item.street}</Text>
-					<Text style={{ fontSize: 18, marginTop: 2 }}>Thời Gian HĐ:{item.opening_time}-{item.closing_time}</Text>
-					<Text style={{ fontSize: 18, marginTop: 2 }}>SĐT: {item.phone}</Text>
+					<Text style={{ fontSize: 18, }}>Thời Gian HĐ:{item.opening_time}-{item.closing_time}</Text>
+					<Text style={{ fontSize: 18, }}>SĐT: {item.phone}</Text>
 				</View>
 			</TouchableOpacity>
 		</View>
 	);
 	return (
-		<View style={{ flex: 1, backgroundColor: '#ececec' }}>
+		<View style={{ flex: 1, backgroundColor: '#f5f5ef' }}>
 			
 			<View style={{ height: 60, flexDirection: 'row', backgroundColor: 'white' }}>
 				<View style={{ flex:1,alignItems:'flex-start', justifyContent: 'center', marginLeft:20}}>
@@ -71,7 +71,7 @@ export default function Store({ navigation }) {
 				</View>
 			</View>
 			<View style={{ borderBottomWidth: 0.2, flexDirection: "row", height: 70, justifyContent: 'center', alignItems: 'center', borderColor: "gray", backgroundColor: 'white' }}>
-				<TextInput placeholder="Nhập Tên Đường..." style={{ height: 60, width: '65%', backgroundColor: '#d2d2d2', borderRadius: 10, fontSize: 24, marginRight: 5, marginBottom: 5 }}>
+				<TextInput placeholder="Nhập Tên Đường..." style={{ height: 60, width: '65%', backgroundColor: '#ececec', borderRadius: 10, fontSize: 24, marginRight: 5, marginBottom: 5 }}>
 
 				</TextInput>
 				<TouchableOpacity style={{ flexDirection: 'row', height: 60, width: 100, borderRadius: 10, backgroundColor: 'white', marginLeft: 5, marginVertical: 10, justifyContent: 'center', alignItems: 'center' }}>
@@ -81,9 +81,9 @@ export default function Store({ navigation }) {
 			</View>
 			<SafeAreaView style={{ flex: 1, width: '94%', marginLeft: '3%', borderRadius: 10, }}>
 				{isLoading && <Loading />}
-				<View style={{ backgroundColor: '#ececec' }}>
+				<View style={{ backgroundColor: '#f5f5ef' }}>
 					<FlatList
-						style={{ backgroundColor: '#ececec', }}
+						style={{ backgroundColor: '#f5f5ef', }}
 						data={product}
 						renderItem={renderItem}
 						keyExtractor={item => item.id?.toString()}

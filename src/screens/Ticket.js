@@ -10,28 +10,20 @@ import TichDiem from './SonofTicket/TichDiem';
 
 export default function Ticket() {
 	return (
-		<View style={{ justifyContent: 'center', alignItems: 'center' }}>
-			<View style={{ height: 70, marginTop: 130, flexDirection: 'row-reverse', backgroundColor: 'white' }}>
-
-				<TouchableOpacity style={{ height: 50, width: 50, borderRadius: 50 / 2, backgroundColor: '#fff', marginRight: 15, marginVertical: 10, justifyContent: 'center', alignItems: 'center', elevation: 15, shadowColor: '0,0,0, .4', shadowRadius: 1, shadowOpacity: 1, shadowOffset: { height: 1, width: 1 } }}>
-					<RnIcon name="notifications-outline" size={30} color="black" />
-
-				</TouchableOpacity>
-				<View style={{ justifyContent: "center", alignItems: 'center', marginRight: 220, marginLeft: 10 }}>
-					<Text style={{ fontWeight: 'bold', fontSize: 30 }}>Tích Điểm</Text>
+		<View style={{flex:1, justifyContent: 'center', alignItems: 'center' }}>
+			<View style={{ height: 60, flexDirection: 'row', backgroundColor: 'white',marginTop:60}}>
+				<View style={{ flex:1,alignItems:'flex-start', justifyContent: 'center', marginLeft:20}}>
+					<Text style={{ fontWeight: 'bold', fontSize: 28 }}>Tích Điểm</Text>
 				</View>
-			</View>
-			<View style={{ height: 55, width: '100%', backgroundColor: 'white' }}>
-				<View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: 5 }}>
-					<TouchableOpacity style={{ height: 42, width: '48%', backgroundColor: '#ececec', borderRadius: 20, justifyContent: 'center', alignItems: 'center', marginHorizontal: 5 }}>
-						<Text style={{ fontSize: 18 }}>Tích Điểm</Text>
-					</TouchableOpacity>
-					<TouchableOpacity style={{ height: 42, width: '48%', backgroundColor: '#ececec', borderRadius: 20, justifyContent: 'center', alignItems: 'center', marginHorizontal: 5 }}>
-						<Text style={{ fontSize: 18 }}>Đổi Ưu Đãi</Text>
+				<View style={{ flex:1,flexDirection:'row-reverse'}}>
+					<TouchableOpacity style={{ height: 42, width: 42, borderRadius: 42 / 2, backgroundColor: '#fff', marginRight: 15, marginVertical: 10, justifyContent: 'center', alignItems: 'center', elevation: 15, shadowColor: '0,0,0, .4', shadowRadius: 1, shadowOpacity: 1, shadowOffset: { height: 1, width: 1 } }}>
+						<RnIcon name="notifications-outline" size={28} color="black" />
 					</TouchableOpacity>
 				</View>
 			</View>
-			<TichDiem/>
+			<View>
+				<TichDiem/>
+			</View>
 		</View>
 	)
 }

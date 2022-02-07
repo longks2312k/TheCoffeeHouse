@@ -12,12 +12,12 @@ export default function TichDiem() {
 
       <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1 }}>
         <View style={{width:'96%',height:350,backgroundColor:'white',marginLeft:9,marginTop:5,borderRadius:20}}>
-          <View style={{height:240,backgroundColor:'orange',width:'100%',borderRadius:20}}>
+          <View style={{height:260,backgroundColor:'orange',width:'100%',borderRadius:10}}>
             <Text style={{ fontWeight: 'bold', fontSize: 26,marginTop:10,marginLeft:20,color:'white'}}>Nguyễn Hoàng Long</Text>
             <Text style={{ fontWeight: 'bold', fontSize: 22,marginTop:10,marginLeft:20,color:'white',marginBottom:35}}>0 BEAN - Mới</Text>
-            <View style={{height:100,backgroundColor:'white',width:'90%',borderRadius:20,marginHorizontal:20,justifyContent:'center',alignItems:'center'}}>
+            <View style={{height:120,backgroundColor:'white',width:'90%',borderRadius:8,marginHorizontal:20,justifyContent:'center',alignItems:'center'}}>
               <Image
-                style={{ height: 55, width: '80%', marginHorizontal:40,marginTop:10 }}
+                style={{ height: 60, width: '80%', marginHorizontal:40,marginTop:10 }}
                 source={{ uri: 'https://organic365.vn/image/cache/catalog/tin-tuc/CHECK-MA-VACH-ORGANIC365-480x320.jpg' }}
               />
               <Text style={{ fontWeight: 'bold', fontSize: 18,marginTop:5}}>69696969669</Text>
@@ -32,25 +32,25 @@ export default function TichDiem() {
         <View>
           <View style={{ flexDirection: 'row', backgroundColor: '#ececec', marginVertical: 10, height: 120 ,width:'95%',marginLeft:10}}>
             <TouchableOpacity style={{ flex: 1, backgroundColor: 'white', borderRadius: 10 }}>
-              <RnIcon style={{ marginTop: 15, marginLeft: 15, }} name="gift-outline" size={40} color="orange" />
-              <Text style={{ marginTop: 10, marginLeft: 15, fontSize: 24 }}>Đổi ưu đãi</Text>
+              <RnIcon style={{ flex: 1, marginTop: 15, marginLeft: 15, }} name="gift-outline" size={28} color="red" />
+              <Text style={{ flex: 1, marginLeft: 15, fontSize: 20 }}>Đổi ưu đãi</Text>
             </TouchableOpacity>
             <View style={{ width: 10, backgroundColor: '#ececec' }}></View>
             <TouchableOpacity style={{ flex: 1, backgroundColor: 'white', borderRadius: 10 }}>
-              <RnIcon1 style={{ marginTop: 15, marginLeft: 20, }} name="ticket-confirmation-outline" size={40} color="orange" />
-              <Text style={{ marginTop: 10, marginLeft: 20, fontSize: 24 }}>Phiếu ưu đãi</Text>
+              <RnIcon1 style={{ flex: 1,marginTop: 15, marginLeft: 15, }} name="ticket-confirmation-outline" size={28} color="orange" />
+              <Text style={{	flex: 1,marginLeft: 15, fontSize: 20 }}>Phiếu ưu đãi</Text>
             </TouchableOpacity>
           </View>
           <View style={{ flexDirection: 'row', backgroundColor: '#ececec', marginBottom: 0, height: 120 ,width:'95%',marginLeft:10}}>
             <TouchableOpacity style={{ flex: 1, backgroundColor: 'white', borderRadius: 10 }}>
-              <RnIcon style={{ marginTop: 15, marginLeft: 15, }} name="receipt-outline" size={40} color="orange" />
-              <Text style={{ marginTop: 10, marginLeft: 15, fontSize: 24 }}>Lịch sử giao dịch</Text>
-            </TouchableOpacity>
-            <View style={{ width: 10, backgroundColor: '#ececec' }}></View>
-            <TouchableOpacity style={{ flex: 1, backgroundColor: 'white', borderRadius: 10 }}>
-              <RnIcon style={{ marginTop: 15, marginLeft: 20, }} name="shield-checkmark-outline" size={40} color="blue" />
-              <Text style={{ marginTop: 10, marginLeft: 20, fontSize: 24 }}>Quyền lợi</Text>
-            </TouchableOpacity>
+						<RnIcon style={{ flex: 1, marginTop: 15, marginLeft: 15, }} name="receipt-outline" size={28} color="orange" />
+						<Text style={{ flex: 1, marginLeft: 15, fontSize: 20 }}>Lịch sử giao dịch</Text>
+					</TouchableOpacity>
+					<View style={{ width: 10, backgroundColor: '#ececec' }}></View>
+					<TouchableOpacity style={{ flex: 1, backgroundColor: 'white', borderRadius: 10 }}>
+						<RnIcon style={{ flex: 1,marginTop: 15, marginLeft: 15, }} name="shield-checkmark-outline" size={28} color="blue" />
+						<Text style={{	flex: 1,marginLeft: 15, fontSize: 20 }}>Quyền lơi của bạn</Text>
+					</TouchableOpacity>
           </View>
         </View>
         <View style={{ flex: 1 }}>
