@@ -80,14 +80,15 @@ export default function Product({ navigation }) {
 	);
 	return (
 		<View style={{ flex: 1, backgroundColor: '#ececec' }}>
-			
-			<View style={{ height: 70, flexDirection: 'row', backgroundColor: 'white', alignItems: 'center' , justifyContent: 'space-between'}}>
-				<Text style={{ fontSize: 30, fontWeight: 'bold', marginLeft: 20 }}>Giao Hàng</Text>
-				<View style={{flexDirection:'row'}}>
-					<TouchableOpacity onPress={() => navigation.navigate('Bag')} style={{  height: 50, width: 50, borderRadius: 50 / 2, backgroundColor: '#fff', marginRight: 15, marginVertical: 10, justifyContent: 'center', alignItems: 'center', elevation: 15, shadowColor: '0,0,0, .4', shadowRadius: 1, shadowOpacity: 1, shadowOffset: { height: 1, width: 1 } }}>
+			<View style={{ height: 60, flexDirection: 'row', backgroundColor: 'white' }}>
+				<View style={{ flex:1,alignItems:'flex-start', justifyContent: 'center', marginLeft:20}}>
+					<Text style={{ fontWeight: 'bold', fontSize: 28 }}>Giao Hàng</Text>
+				</View>
+				<View style={{ flex:1,flexDirection:'row-reverse'}}>
+					<TouchableOpacity onPress={() => navigation.navigate('Bag')} style={{  height: 42, width: 42, borderRadius: 50 / 2, backgroundColor: '#fff', marginRight: 15, marginVertical: 10, justifyContent: 'center', alignItems: 'center', elevation: 15, shadowColor: '0,0,0, .4', shadowRadius: 1, shadowOpacity: 1, shadowOffset: { height: 1, width: 1 } }}>
 						<RnIcon2 name="shopping-bag-1" size={25} color="black" />
 					</TouchableOpacity>
-					<TouchableOpacity style={{ height: 50, width: 50, borderRadius: 50 / 2, backgroundColor: '#fff', marginRight: 15, marginVertical: 10, justifyContent: 'center', alignItems: 'center', elevation: 15, shadowColor: '0,0,0, .4', shadowRadius: 1, shadowOpacity: 1, shadowOffset: { height: 1, width: 1 } }}>
+					<TouchableOpacity style={{ height: 42, width: 42, borderRadius: 50 / 2, backgroundColor: '#fff', marginRight: 15, marginVertical: 10, justifyContent: 'center', alignItems: 'center', elevation: 15, shadowColor: '0,0,0, .4', shadowRadius: 1, shadowOpacity: 1, shadowOffset: { height: 1, width: 1 } }}>
 						<RnIcon name="notifications-outline" size={30} color="black" />
 					</TouchableOpacity>
 				</View>
@@ -105,21 +106,21 @@ export default function Product({ navigation }) {
 
 				</TouchableOpacity>
 			</View>
-			<ScrollView showsHorizontalScrollIndicator={false} horizontal style={{ flex: 1, height: 100, width: '100%', backgroundColor: '#ececec', marginBottom: 5 }}>
-				<View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: 5 }}>
-					<TouchableOpacity style={{ height: 50, paddingHorizontal: 8, backgroundColor: 'white', borderRadius: 20, justifyContent: 'center', alignItems: 'center', marginHorizontal: 5 }}>
+			<ScrollView showsHorizontalScrollIndicator={false} horizontal style={{ flex: 1, height: 50, width: '100%', backgroundColor: '#ececec', marginBottom: 5 }}>
+				<View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: 0 }}>
+					<TouchableOpacity style={{ height: 42, paddingHorizontal: 8, backgroundColor: 'white', borderRadius: 20, justifyContent: 'center', alignItems: 'center', marginHorizontal: 5 }}>
 						<Text style={{ fontSize: 20 }}>Cà phê</Text>
 					</TouchableOpacity>
-					<TouchableOpacity style={{ height: 50, paddingHorizontal: 8, backgroundColor: 'white', borderRadius: 20, justifyContent: 'center', alignItems: 'center', marginHorizontal: 5 }}>
+					<TouchableOpacity style={{ height: 42, paddingHorizontal: 8, backgroundColor: 'white', borderRadius: 20, justifyContent: 'center', alignItems: 'center', marginHorizontal: 5 }}>
 						<Text style={{ fontSize: 20 }}>Đá xay - Chocolate - Matcha</Text>
 					</TouchableOpacity>
-					<TouchableOpacity style={{ height: 50, paddingHorizontal: 8, backgroundColor: 'white', borderRadius: 20, justifyContent: 'center', alignItems: 'center', marginHorizontal: 5 }}>
+					<TouchableOpacity style={{ height: 42, paddingHorizontal: 8, backgroundColor: 'white', borderRadius: 20, justifyContent: 'center', alignItems: 'center', marginHorizontal: 5 }}>
 						<Text style={{ fontSize: 20 }}>Trà - Trái cây - Trà sữa</Text>
 					</TouchableOpacity>
-					<TouchableOpacity style={{ height: 50, paddingHorizontal: 8, backgroundColor: 'white', borderRadius: 20, justifyContent: 'center', alignItems: 'center', marginHorizontal: 5 }}>
+					<TouchableOpacity style={{ height: 42, paddingHorizontal: 8, backgroundColor: 'white', borderRadius: 20, justifyContent: 'center', alignItems: 'center', marginHorizontal: 5 }}>
 						<Text style={{ fontSize: 20 }}>Bánh mặn - Bánh ngọt - Snack</Text>
 					</TouchableOpacity>
-					<TouchableOpacity style={{ height: 50, paddingHorizontal: 8, backgroundColor: 'white', borderRadius: 20, justifyContent: 'center', alignItems: 'center', marginHorizontal: 5 }}>
+					<TouchableOpacity style={{ height: 42, paddingHorizontal: 8, backgroundColor: 'white', borderRadius: 20, justifyContent: 'center', alignItems: 'center', marginHorizontal: 5 }}>
 						<Text style={{ fontSize: 20 }}>Bộ sưu tập quà tặng</Text>
 					</TouchableOpacity>
 				</View>

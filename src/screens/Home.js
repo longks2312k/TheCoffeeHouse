@@ -26,16 +26,14 @@ const styles = StyleSheet.create({
 	},
 })
 
-export default function  Home  ({ navigation }) {
-  return (
-    <View style={{ flex: 1, backgroundColor: '#ececec' }}>
+export default function Home({ navigation }) {
+	return (
+		<View style={{ flex: 1, backgroundColor: '#ececec' }}>
 			<View style={{ height: 70, flexDirection: 'row-reverse', backgroundColor: 'white' }}>
-
 				<TouchableOpacity style={{ height: 50, width: 50, borderRadius: 50 / 2, backgroundColor: '#fff', marginRight: 15, marginVertical: 10, justifyContent: 'center', alignItems: 'center', elevation: 15, shadowColor: '0,0,0, .4', shadowRadius: 1, shadowOpacity: 1, shadowOffset: { height: 1, width: 1 } }}>
 					<RnIcon name="notifications-outline" size={30} color="black" />
-
 				</TouchableOpacity>
-				<TouchableOpacity onPress={() =>navigation.navigate('Ticket')} style={{ height: 50, width: 80, borderRadius: 50 / 2, backgroundColor: '#fff', marginHorizontal: 15, marginVertical: 10, justifyContent: 'center', alignItems: 'center', flexDirection: 'row', elevation: 5, shadowColor: '0,0,0, .4', shadowRadius: 1, shadowOpacity: 1, shadowOffset: { height: 1, width: 1 } }}>
+				<TouchableOpacity onPress={() => navigation.navigate('Ticket')} style={{ height: 50, width: 80, borderRadius: 50 / 2, backgroundColor: '#fff', marginHorizontal: 15, marginVertical: 10, justifyContent: 'center', alignItems: 'center', flexDirection: 'row', elevation: 5, shadowColor: '0,0,0, .4', shadowRadius: 1, shadowOpacity: 1, shadowOffset: { height: 1, width: 1 } }}>
 					<RnIcon1 name="ticket-confirmation-outline" size={30} color="orange" />
 					<Text style={{ fontSize: 24, fontWeight: 'bold' }}> 4</Text>
 				</TouchableOpacity>
@@ -45,12 +43,12 @@ export default function  Home  ({ navigation }) {
 			</View>
 			<ScrollView style={{ flex: 1, width: '94%', marginLeft: '3%', backgroundColor: '#ececec', borderRadius: 5, }}>
 				<View style={{ height: 120, marginTop: 10, width: '100%', borderColor: '#ececec', backgroundColor: 'white', borderWidth: 1, borderRadius: 10, flexDirection: 'row', justifyContent: "center", alignItems: "center" }}>
-					<TouchableOpacity onPress={() =>navigation.navigate('Order')}  style={{ height: 100, width: '48%', backgroundColor: 'white', justifyContent: "center", alignItems: "center", borderRadius: 10 }}>
+					<TouchableOpacity onPress={() => navigation.navigate('Order')} style={{ height: 100, width: '48%', backgroundColor: 'white', justifyContent: "center", alignItems: "center", borderRadius: 10 }}>
 						<RnIcon3 name="shipping-fast" size={60} color="orange" />
 						<Text style={{ fontSize: 18, fontWeight: 'bold' }}>Giao Hàng</Text>
 					</TouchableOpacity>
 					<Text style={{ height: 90, width: 2, backgroundColor: '#ececec' }}></Text>
-					<TouchableOpacity onPress={() =>navigation.navigate('Bag')} style={{ height: 100, width: '48%', borderRadius: 10, backgroundColor: 'white', justifyContent: "center", alignItems: "center" }}>
+					<TouchableOpacity onPress={() => navigation.navigate('Bag')} style={{ height: 100, width: '48%', borderRadius: 10, backgroundColor: 'white', justifyContent: "center", alignItems: "center" }}>
 						<RnIcon2 name="shopping-bag-1" size={65} color="orange" />
 						<Text style={{ fontSize: 18, fontWeight: 'bold' }}>Mang Về</Text>
 					</TouchableOpacity>
@@ -71,19 +69,19 @@ export default function  Home  ({ navigation }) {
 
 					<View style={styles.slide2}>
 						<Image
-							style={{ height: 200, width: '100%', borderRadius: 15 }}
+							style={{ height: 200, width: '100%', borderRadius: 15, paddingHorizontal:10 }}
 							source={{ uri: 'https://media.foody.vn/res/g71/702436/prof/s/foody-mobile-foody-mobile-foody-m.jpg' }}
 						/>
 					</View>
 					<View style={styles.slide3}>
 						<Image
-							style={{ height: 200, width: '100%', borderRadius: 15 }}
+							style={{ height: 200, width: '100%', borderRadius: 15, paddingHorizontal:10 }}
 							source={{ uri: 'https://ahamove.com/wp-content/uploads/2021/01/TCH-Hoa%CC%80ng-%C4%90a%CC%A3o-Thuy%CC%81.jpg' }}
 						/>
 					</View>
 					<View style={styles.slide1}>
 						<Image
-							style={{ height: 200, width: '100%', borderRadius: 15 }}
+							style={{ height: 200, width: '100%', borderRadius: 15, paddingHorizontal:10 }}
 							source={{ uri: 'https://www.kinhnghiemkinhdoanh.org/wp-content/uploads/2020/01/Kinhnghiemkinhdoanh.org-the-coffee-house-phat-trien-thuong-hieu-nho-vao-customer-insight-k7-1.jpg' }}
 						/>
 					</View>
@@ -233,5 +231,5 @@ export default function  Home  ({ navigation }) {
 				</View>
 			</ScrollView>
 		</View>
-  );
+	);
 };
