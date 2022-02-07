@@ -42,36 +42,36 @@ export default function Other({ navigation }) {
 				<View style={{ backgroundColor: '#ececec', marginBottom: 30, height: 130 }}>
 					<TouchableOpacity style={{ flex: 1, backgroundColor: 'white', borderRadius: 10, flexDirection: 'row', marginBottom: 3 ,justifyContent:'center',alignItems:'center'}}>
 						<RnIcon style={{flex: 2,marginLeft: 15, }} name="star-outline" size={25} color="black" />
-						<Text style={{flex: 9, fontSize: 24 }}>Đánh giá đơn hàng</Text>
-						<RnIcon style={{ flex: 1}} name="ios-chevron-forward" size={30} color="black" />
+						<Text style={{flex: 9, fontSize: 22 }}>Đánh giá đơn hàng</Text>
+						<RnIcon style={{ flex: 1}} name="ios-chevron-forward" size={28} color="black" />
 					</TouchableOpacity>
 					<TouchableOpacity style={{ flex: 1, backgroundColor: 'white', borderRadius: 10, flexDirection: 'row', marginBottom: 3, justifyContent:'center',alignItems:'center' }}>
 						<RnIcon style={{flex: 2,marginLeft: 15 }} name="ios-chatbox-outline" size={25} color="black" />
-						<Text style={{flex: 9, fontSize: 24 }}>Liên hệ góp ý</Text>
-						<RnIcon style={{ flex: 1 }} name="ios-chevron-forward" size={30} color="black" />
+						<Text style={{flex: 9, fontSize: 22 }}>Liên hệ góp ý</Text>
+						<RnIcon style={{ flex: 1 }} name="ios-chevron-forward" size={28} color="black" />
 					</TouchableOpacity>
 				</View>
 				<Text style={{ fontWeight: 'bold', fontSize: 24, marginBottom: 5 }}>Tài khoản</Text>
 				<View style={{ backgroundColor: '#ececec', marginBottom: 30, height: 260 }}>
 					<TouchableOpacity style={{ flex: 1, backgroundColor: 'white', borderRadius: 10, flexDirection: 'row', marginBottom: 3 ,justifyContent:'center',alignItems:'center'}}>
 						<RnIcon style={{flex: 2,marginLeft: 15, }} name="person-outline" size={25} color="black" />
-						<Text style={{flex: 9, fontSize: 24 }}>Thông tin cá nhân</Text>
-						<RnIcon style={{ flex: 1}} name="ios-chevron-forward" size={30} color="black" />
+						<Text style={{flex: 9, fontSize: 22 }}>Thông tin cá nhân</Text>
+						<RnIcon style={{ flex: 1}} name="ios-chevron-forward" size={28} color="black" />
 					</TouchableOpacity>
 					<TouchableOpacity style={{ flex: 1, backgroundColor: 'white', borderRadius: 10, flexDirection: 'row', marginBottom: 3 ,justifyContent:'center',alignItems:'center'}}>
 						<RnIcon style={{flex: 2,marginLeft: 15, }} name="bookmark-outline" size={25} color="black" />
-						<Text style={{flex: 9, fontSize: 24 }}>Địa chỉ đã lưu</Text>
-						<RnIcon style={{ flex: 1}} name="ios-chevron-forward" size={30} color="black" />
+						<Text style={{flex: 9, fontSize: 22 }}>Địa chỉ đã lưu</Text>
+						<RnIcon style={{ flex: 1}} name="ios-chevron-forward" size={28} color="black" />
 					</TouchableOpacity>
 					<TouchableOpacity style={{ flex: 1, backgroundColor: 'white', borderRadius: 10, flexDirection: 'row', marginBottom: 3 ,justifyContent:'center',alignItems:'center'}}>
 						<RnIcon style={{flex: 2,marginLeft: 15, }} name="settings-outline" size={25} color="black" />
-						<Text style={{flex: 9, fontSize: 24 }}>Cài đặt</Text>
-						<RnIcon style={{ flex: 1}} name="ios-chevron-forward" size={30} color="black" />
+						<Text style={{flex: 9, fontSize: 22 }}>Cài đặt</Text>
+						<RnIcon style={{ flex: 1}} name="ios-chevron-forward" size={28} color="black" />
 					</TouchableOpacity>
 					<TouchableOpacity style={{ flex: 1, backgroundColor: 'white', borderRadius: 10, flexDirection: 'row', marginBottom: 3 ,justifyContent:'center',alignItems:'center'}}>
 						<RnIcon style={{flex: 2,marginLeft: 15, }} name="log-out-outline" size={25} color="black" />
-						<Text style={{flex: 9, fontSize: 24 }}>Đăng xuất</Text>
-						<RnIcon style={{ flex: 1}} name="ios-chevron-forward" size={30} color="black" />
+						<Text style={{flex: 9, fontSize: 22 }}>Đăng xuất</Text>
+						<RnIcon style={{ flex: 1}} name="ios-chevron-forward" size={28} color="black" />
 					</TouchableOpacity>
 					
 				</View>
