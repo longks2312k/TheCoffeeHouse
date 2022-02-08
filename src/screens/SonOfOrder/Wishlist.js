@@ -8,7 +8,7 @@ import RnIcon3 from 'react-native-vector-icons/FontAwesome5';
 import { useSelector, useDispatch } from "react-redux";
 
 
-export default function Wishlist() {
+export default function Wishlist({navigation}) {
 
 	const dispatch = useDispatch();
 	const productWishlist = useSelector((store) => store.wishlistReducer.products);
@@ -21,16 +21,18 @@ export default function Wishlist() {
 
 	const renderItem = ({ item }) => {
 		return (
-			<View style={{ flex: 1, margin: 5, flexDirection: 'row', borderRadius: 10, backgroundColor: 'white', padding: 10, width: '95%', marginRight: 10 }}>
+			<View style={{ flex: 1, marginVertical: 5,marginHorizontal:10, flexDirection: 'row', borderRadius: 8, backgroundColor: 'white', padding: 10, width: '95%', marginRight: 10 }}>
 				<Image
-					style={{ height: 120, width: '30%', borderRadius: 10 }}
+					style={{ height: 120, flex:3, borderRadius: 5 }}
 					source={{ uri: item.image }}
 				/>
-				<View style={{ width: '70%', marginRight: 30 }}>
-					<Text /*onPress={onTouch}*/ style={{ fontSize: 20, marginLeft: 10, fontWeight: 'bold' }}>{item.product_name}</Text>
-					<Text style={{ fontSize: 20, marginTop: 10, marginLeft: 10, }}>Giá: {item.price}đ</Text>
-					<TouchableOpacity onPress={onRemoveItem(item)} style={{ marginLeft: 205, backgroundColor: '#fff', marginTop: -20, marginRight: 15, marginVertical: 10, justifyContent: 'center', alignItems: 'center', }}>
-						<RnIcon1 name="delete" size={40} color="black" />
+				<View style={{ flex:5.8,}}>
+					<Text ellipsizeMode='tail' numberOfLines={1} style={{ fontSize: 24, marginLeft: 10, fontWeight: 'bold' }}>{item.product_name}</Text>
+					<Text style={{ fontSize: 20, marginTop: 5, marginLeft: 10, }}>Giá: {item.price}</Text>
+				</View>
+				<View style={{flex:1.2, width: '10%', justifyContent: 'center', alignItems: 'center' }}>
+					<TouchableOpacity onPress={onRemoveItem(item)} style={{}}>
+						<RnIcon name="close-outline" size={40} color="black" />
 					</TouchableOpacity>
 				</View>
 			</View>
@@ -39,9 +41,12 @@ export default function Wishlist() {
 
 	return (
 		<View style={{ flex: 1, backgroundColor: '#ececec' }}>
-			<View style={{ height: 70, flexDirection: 'row', backgroundColor: 'white', justifyContent: 'center', alignItems: 'center', borderBottomWidth: 2, borderColor: '#ececec' }}>
-				<Text style={{ fontSize: 26, fontWeight: 'bold', marginLeft: 10 }}>Wishlist</Text>
+			<View style={{ height: 50, flexDirection: 'row', backgroundColor: 'white', justifyContent: 'center', alignItems: 'center', borderBottomWidth: 2, borderColor: '#ececec' }}>
+				<Text style={{ fontSize: 22, fontWeight: 'bold', marginLeft: 10 }}>Wishlist</Text>
 			</View>
+			<TouchableOpacity onPress={() => { navigation.goBack() }} style={{ position: 'absolute', left: 0, top: 5 }}>
+				<RnIcon name="chevron-back-outline" size={36} color="black" />
+			</TouchableOpacity>
 			<SafeAreaView style={{ flex: 1 }}>
 				<View>
 					<FlatList
@@ -53,10 +58,10 @@ export default function Wishlist() {
 						ListFooterComponent={
 							<View>
 								{productWishlist?.length ?
-									<TouchableOpacity onPress={onRemoveAll} style={{ marginHorizontal: 10, backgroundColor: '#fff', marginVertical: 10, justifyContent: 'center', alignItems: 'center', height: 60, borderRadius: 20 }}>
+									<TouchableOpacity onPress={onRemoveAll} style={{ marginHorizontal: 50, backgroundColor: '#ff8c70', marginVertical: 10, justifyContent: 'center', alignItems: 'center', height: 50, borderRadius: 25 }}>
 										<View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-											<RnIcon1 name="delete" size={40} color="black" />
-											<Text style={{ fontSize: 26 }}>Remove All</Text>
+											<RnIcon name="trash-outline" size={32} color="black" />
+											<Text style={{ fontSize: 24, marginLeft: 10}}>Remove All</Text>
 										</View>
 									</TouchableOpacity> : null}
 							</View>

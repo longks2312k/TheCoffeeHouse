@@ -34,7 +34,7 @@ export default function Bag({ navigation }) {
 
 	const renderItem = ({ item }) => {
 		return (
-			<View style={{ flex: 1, marginVertical: 5,marginHorizontal:10, flexDirection: 'row', borderRadius: 10, backgroundColor: 'white', padding: 10, width: '95%', marginRight: 10 }}>
+			<View style={{ flex: 1, marginVertical: 5,marginHorizontal:10, flexDirection: 'row', borderRadius: 8, backgroundColor: 'white', padding: 10, width: '95%', marginRight: 10 }}>
 				<Image
 					style={{ height: 120, flex:3, borderRadius: 5 }}
 					source={{ uri: item.image }}
