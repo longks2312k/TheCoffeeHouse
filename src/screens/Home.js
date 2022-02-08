@@ -10,7 +10,8 @@ import Swiper from 'react-native-swiper';
 const styles = StyleSheet.create({
 	wrapper: {
 		height: 210,
-		marginVertical: 10, backgroundColor: '#ececec'
+		marginVertical: 10,
+		backgroundColor: '#f5f5ef',
 	},
 	slide1: {
 		flex: 1,
@@ -28,26 +29,28 @@ const styles = StyleSheet.create({
 
 export default function Home({ navigation }) {
 	return (
-		<View style={{ flex: 1, backgroundColor: '#ececec' }}>
-			<View style={{ height: 70, flexDirection: 'row-reverse', backgroundColor: 'white' }}>
-				<TouchableOpacity style={{ height: 50, width: 50, borderRadius: 50 / 2, backgroundColor: '#fff', marginRight: 15, marginVertical: 10, justifyContent: 'center', alignItems: 'center', elevation: 15, shadowColor: '0,0,0, .4', shadowRadius: 1, shadowOpacity: 1, shadowOffset: { height: 1, width: 1 } }}>
-					<RnIcon name="notifications-outline" size={30} color="black" />
-				</TouchableOpacity>
-				<TouchableOpacity onPress={() => navigation.navigate('Ticket')} style={{ height: 50, width: 80, borderRadius: 50 / 2, backgroundColor: '#fff', marginHorizontal: 15, marginVertical: 10, justifyContent: 'center', alignItems: 'center', flexDirection: 'row', elevation: 5, shadowColor: '0,0,0, .4', shadowRadius: 1, shadowOpacity: 1, shadowOffset: { height: 1, width: 1 } }}>
-					<RnIcon1 name="ticket-confirmation-outline" size={30} color="orange" />
-					<Text style={{ fontSize: 24, fontWeight: 'bold' }}> 4</Text>
-				</TouchableOpacity>
-				<View style={{ justifyContent: "center", alignItems: 'center' }}>
-					<Text style={{ fontWeight: 'bold', fontSize: 28 }}>Chào Mừng Trở Lại</Text>
+		<View style={{ flex: 1, backgroundColor: '#f5f5ef' }}>
+			<View style={{ height: 50, flexDirection: 'row', backgroundColor: 'white' }}>
+				<View style={{ flex:1,alignItems:'flex-start', justifyContent: 'center', marginLeft:20}}>
+					<Text style={{ fontWeight: 'bold', fontSize: 22 }}>Chào mừng trở lại</Text>
+				</View>
+				<View style={{ flex:1,flexDirection:'row-reverse'}}>
+					<TouchableOpacity style={{ height: 36, width: 36, borderRadius: 36 / 2, backgroundColor: '#fff', marginRight: 15, marginVertical: 8, justifyContent: 'center', alignItems: 'center', elevation: 15, shadowColor: '0,0,0, .4', shadowRadius: 1, shadowOpacity: 1, shadowOffset: { height: 1, width: 1 } }}>
+						<RnIcon name="notifications-outline" size={22} color="black" />
+					</TouchableOpacity>
+					<TouchableOpacity onPress={() => navigation.navigate('Ticket')} style={{ height: 36, width: 65, borderRadius: 50 / 2, backgroundColor: '#fff', marginHorizontal: 15, marginVertical: 8, justifyContent: 'center', alignItems: 'center', flexDirection: 'row', elevation: 5, shadowColor: '0,0,0, .4', shadowRadius: 1, shadowOpacity: 1, shadowOffset: { height: 1, width: 1 } }}>
+						<RnIcon1 name="ticket-confirmation-outline" size={24} color="orange" />
+						<Text style={{ fontSize: 16, fontWeight: 'bold' }}> 4</Text>
+					</TouchableOpacity>
 				</View>
 			</View>
-			<ScrollView style={{ flex: 1, width: '94%', marginLeft: '3%', backgroundColor: '#ececec', borderRadius: 5, }}>
-				<View style={{ height: 120, marginTop: 10, width: '100%', borderColor: '#ececec', backgroundColor: 'white', borderWidth: 1, borderRadius: 10, flexDirection: 'row', justifyContent: "center", alignItems: "center" }}>
+			<ScrollView style={{ flex: 1, width: '100%', backgroundColor: '#f5f5ef', borderRadius: 5, }}>
+				<View style={{ height: 120, marginTop: 10, width: '96%',marginLeft:'2%', borderColor: '#f5f5ef', backgroundColor: 'white', borderWidth: 1, borderRadius: 10, flexDirection: 'row', justifyContent: "center", alignItems: "center" }}>
 					<TouchableOpacity onPress={() => navigation.navigate('Order')} style={{ height: 100, width: '48%', backgroundColor: 'white', justifyContent: "center", alignItems: "center", borderRadius: 10 }}>
 						<RnIcon3 name="shipping-fast" size={60} color="orange" />
 						<Text style={{ fontSize: 18, fontWeight: 'bold' }}>Giao Hàng</Text>
 					</TouchableOpacity>
-					<Text style={{ height: 90, width: 2, backgroundColor: '#ececec' }}></Text>
+					<Text style={{ height: 90, width: 2, backgroundColor: '#f5f5ef' }}></Text>
 					<TouchableOpacity onPress={() => navigation.navigate('Bag')} style={{ height: 100, width: '48%', borderRadius: 10, backgroundColor: 'white', justifyContent: "center", alignItems: "center" }}>
 						<RnIcon2 name="shopping-bag-1" size={65} color="orange" />
 						<Text style={{ fontSize: 18, fontWeight: 'bold' }}>Mang Về</Text>
@@ -56,37 +59,36 @@ export default function Home({ navigation }) {
 				<Swiper style={styles.wrapper} showsButtons={false}>
 					<View style={styles.slide2}>
 						<Image
-							style={{ height: 200, width: '100%', borderRadius: 15 }}
+							style={{ height: 200, width: '96%', borderRadius: 15 }}
 							source={{ uri: 'http://theme.hstatic.net/1000075078/1000610097/14/share_fb_home.png?v=684' }}
 						/>
 					</View>
 					<View style={styles.slide2}>
 						<Image
-							style={{ height: 200, width: '100%', borderRadius: 15 }}
+							style={{ height: 200, width: '96%', borderRadius: 15 }}
 							source={{ uri: 'https://kenh14cdn.com/2016/img20150903172021537-1481339507676.jpg' }}
 						/>
 					</View>
-
 					<View style={styles.slide2}>
 						<Image
-							style={{ height: 200, width: '100%', borderRadius: 15, paddingHorizontal:10 }}
+							style={{ height: 200, width: '96%', borderRadius: 15, paddingHorizontal:10 }}
 							source={{ uri: 'https://media.foody.vn/res/g71/702436/prof/s/foody-mobile-foody-mobile-foody-m.jpg' }}
 						/>
 					</View>
 					<View style={styles.slide3}>
 						<Image
-							style={{ height: 200, width: '100%', borderRadius: 15, paddingHorizontal:10 }}
+							style={{ height: 200, width: '96%', borderRadius: 15, paddingHorizontal:10 }}
 							source={{ uri: 'https://ahamove.com/wp-content/uploads/2021/01/TCH-Hoa%CC%80ng-%C4%90a%CC%A3o-Thuy%CC%81.jpg' }}
 						/>
 					</View>
 					<View style={styles.slide1}>
 						<Image
-							style={{ height: 200, width: '100%', borderRadius: 15, paddingHorizontal:10 }}
-							source={{ uri: 'https://www.kinhnghiemkinhdoanh.org/wp-content/uploads/2020/01/Kinhnghiemkinhdoanh.org-the-coffee-house-phat-trien-thuong-hieu-nho-vao-customer-insight-k7-1.jpg' }}
+							style={{ height: 200, width: '96%', borderRadius: 15, paddingHorizontal:10 }}
+							source={{ uri: 'https://dulichvietbiz.com/wp-content/uploads/2019/12/T%E1%BB%95ng-h%E1%BB%A3p-10-qu%C3%A1n-cafe-c%C3%B3-view-%C4%91%E1%BA%B9p-%E1%BB%9F-H%C3%A0-N%E1%BB%99i.jpg' }}
 						/>
 					</View>
 				</Swiper>
-				<View style={{ height: 100, width: '100%', backgroundColor: '#ececec' }}>
+				<View style={{ height: 100,width: '96%',marginLeft:'2%', backgroundColor: '#f5f5ef' }}>
 					<Text style={{ fontSize: 26, fontWeight: 'bold', marginLeft: 10 }}>Khám Phá Thêm</Text>
 					<View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: 5 }}>
 						<TouchableOpacity style={{ height: 50, width: '48%', backgroundColor: 'white', borderRadius: 20, justifyContent: 'center', alignItems: 'center', marginHorizontal: 5 }}>
@@ -97,7 +99,7 @@ export default function Home({ navigation }) {
 						</TouchableOpacity>
 					</View>
 				</View>
-				<View style={{ flexDirection: 'row', backgroundColor: '#ececec', marginBottom: 10 }}>
+				<View style={{ flexDirection: 'row',width: '96%',marginLeft:'2%', backgroundColor: '#f5f5ef', marginBottom: 10 }}>
 					<View style={{ flex: 1, padding: 10, backgroundColor: 'white', borderRadius: 10 }}>
 						<View style={{ backgroundColor: 'white' }}>
 							<Image
@@ -113,7 +115,7 @@ export default function Home({ navigation }) {
 							</View>
 						</View>
 					</View>
-					<View style={{ width: 10, backgroundColor: '#ececec' }}></View>
+					<View style={{ width: 10, backgroundColor: '#f5f5ef' }}></View>
 					<View style={{ flex: 1, padding: 10, backgroundColor: 'white', borderRadius: 10 }}>
 						<View>
 							<Image
@@ -130,7 +132,7 @@ export default function Home({ navigation }) {
 						</View>
 					</View>
 				</View>
-				<View style={{ flexDirection: 'row', backgroundColor: '#ececec', marginBottom: 10 }}>
+				<View style={{ flexDirection: 'row',width: '96%',marginLeft:'2%', backgroundColor: '#f5f5ef', marginBottom: 10 }}>
 					<View style={{ flex: 1, padding: 10, backgroundColor: 'white', borderRadius: 10 }}>
 						<View style={{ backgroundColor: 'white' }}>
 							<Image
@@ -146,7 +148,7 @@ export default function Home({ navigation }) {
 							</View>
 						</View>
 					</View>
-					<View style={{ width: 10, backgroundColor: '#ececec' }}></View>
+					<View style={{ width: 10, backgroundColor: '#f5f5ef' }}></View>
 					<View style={{ flex: 1, padding: 10, backgroundColor: 'white', borderRadius: 10 }}>
 						<View>
 							<Image
@@ -163,7 +165,7 @@ export default function Home({ navigation }) {
 						</View>
 					</View>
 				</View>
-				<View style={{ flexDirection: 'row', backgroundColor: '#ececec', marginBottom: 10 }}>
+				<View style={{ flexDirection: 'row',width: '96%',marginLeft:'2%', backgroundColor: '#f5f5ef', marginBottom: 10 }}>
 					<View style={{ flex: 1, padding: 10, backgroundColor: 'white', borderRadius: 10 }}>
 						<View style={{ backgroundColor: 'white' }}>
 							<Image
@@ -179,7 +181,7 @@ export default function Home({ navigation }) {
 							</View>
 						</View>
 					</View>
-					<View style={{ width: 10, backgroundColor: '#ececec' }}></View>
+					<View style={{ width: 10, backgroundColor: '#f5f5ef' }}></View>
 					<View style={{ flex: 1, padding: 10, backgroundColor: 'white', borderRadius: 10 }}>
 						<View>
 							<Image
@@ -196,7 +198,7 @@ export default function Home({ navigation }) {
 						</View>
 					</View>
 				</View>
-				<View style={{ flexDirection: 'row', backgroundColor: '#ececec', marginBottom: 10 }}>
+				<View style={{ flexDirection: 'row',width: '96%',marginLeft:'2%', backgroundColor: '#f5f5ef', marginBottom: 10 }}>
 					<View style={{ flex: 1, padding: 10, backgroundColor: 'white', borderRadius: 10 }}>
 						<View style={{ backgroundColor: 'white' }}>
 							<Image
@@ -212,7 +214,7 @@ export default function Home({ navigation }) {
 							</View>
 						</View>
 					</View>
-					<View style={{ width: 10, backgroundColor: '#ececec' }}></View>
+					<View style={{ width: 10, backgroundColor: '#f5f5ef' }}></View>
 					<View style={{ flex: 1, padding: 10, backgroundColor: 'white', borderRadius: 10 }}>
 						<View>
 							<Image
