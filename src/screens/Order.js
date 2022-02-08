@@ -71,7 +71,7 @@ export default function Product({ navigation }) {
 				</View>
 				<View style={{ flex:1,flexDirection:'column-reverse' }}>
 					<TouchableOpacity onPress={onAddToBag(item)} style={{ height: 36, width: 36, borderRadius: 36 / 2, backgroundColor: '#fff700',justifyContent:'center',alignItems:'center' }}>
-						<RnIcon name="add-outline" size={36} color="white" />
+						<RnIcon name="add-outline" size={28} color="white" />
 					</TouchableOpacity>
 				</View>
 			</TouchableOpacity>
