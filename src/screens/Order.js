@@ -79,7 +79,7 @@ export default function Product({ navigation }) {
 
 	);
 	return (
-		<View style={{ flex: 1, backgroundColor: '#ececec' }}>
+		<View style={{ flex: 1, backgroundColor: '#f5f5ef' }}>
 			<View style={{ height: 60, flexDirection: 'row', backgroundColor: 'white' }}>
 				<View style={{ flex:1,alignItems:'flex-start', justifyContent: 'center', marginLeft:20}}>
 					<Text style={{ fontWeight: 'bold', fontSize: 28 }}>Giao Hàng</Text>

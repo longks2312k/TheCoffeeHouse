@@ -78,12 +78,12 @@ export default function App() {
 				initialRouteName='Trang Chủ'
 				screenOptions={({ route }) => ({
 					tabBarStyle: { height: 60, padding: 8 },
-					tabBarLabelStyle: { fontSize: 13 },
+					tabBarLabelStyle: { fontSize: 10, fontWeight: '700',marginBottom:5},
 					tabBarIcon: ({ focused, color, size }) => {
 						let iconName;
 
 						if (route.name === 'Trang Chủ') {
-							iconName = focused ? 'home' : 'home-outline';
+							iconName = focused ? 'home-variant' : 'home-variant-outline';
 						} else if (route.name === 'Đặt Hàng') {
 							iconName = focused ? 'coffee' : 'coffee-outline';
 						}
@@ -97,10 +97,10 @@ export default function App() {
 							iconName = focused ? 'format-list-bulleted' : 'format-list-bulleted';
 						}
 
-						return <RnIcon1 name={iconName} size={32} color={color} />;
+						return <RnIcon1 name={iconName} size={28} color={color} />;
 					},
-					tabBarActiveTintColor: 'orange',
-					tabBarInactiveTintColor: 'gray',
+					tabBarActiveTintColor: '#ffb21a',
+					tabBarInactiveTintColor: '#b3b3b3',
 					headerShown: false,
 
 				})}
