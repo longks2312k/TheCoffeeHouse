@@ -34,14 +34,14 @@ export default function Bag({ navigation }) {
 
 	const renderItem = ({ item }) => {
 		return (
-			<View style={{ flex: 1, margin: 5, flexDirection: 'row', borderRadius: 10, backgroundColor: 'white', padding: 10, width: '95%', marginRight: 10 }}>
+			<View style={{ flex: 1, marginVertical: 5,marginHorizontal:10, flexDirection: 'row', borderRadius: 10, backgroundColor: 'white', padding: 10, width: '95%', marginRight: 10 }}>
 				<Image
-					style={{ height: 120, width: '30%', borderRadius: 10 }}
+					style={{ height: 120, flex:3, borderRadius: 5 }}
 					source={{ uri: item.image }}
 				/>
-				<View style={{ width: '70%', marginRight: 30 }}>
-					<Text /*onPress={onTouch}*/ style={{ fontSize: 20, marginLeft: 10, fontWeight: 'bold' }}>{item.product_name}</Text>
-					<Text style={{ fontSize: 20, marginTop: 10, marginLeft: 10, }}>Giá: {TotalPrice(item.price, item.quantity)}</Text>
+				<View style={{ flex:5.8,}}>
+					<Text ellipsizeMode='tail' numberOfLines={1} style={{ fontSize: 24, marginLeft: 10, fontWeight: 'bold' }}>{item.product_name}</Text>
+					<Text style={{ fontSize: 20, marginTop: 5, marginLeft: 10, }}>Giá: {TotalPrice(item.price, item.quantity)}</Text>
 					<View style={{ flexDirection: 'row', marginLeft: 10, }}>
 						<TouchableOpacity onPress={onChangeQuantity('reduce', item)} style={{ marginLeft: 0, height: 40, width: 40, borderRadius: 40 / 2, backgroundColor: '#ececec', marginRight: 5, marginTop: 5, justifyContent: 'center', alignItems: 'center', }}>
 							<RnIcon name="caret-back-outline" size={25} color="black" style={{ marginRight: 3 }} />
@@ -50,11 +50,12 @@ export default function Bag({ navigation }) {
 						<TouchableOpacity onPress={onChangeQuantity('increase', item)} style={{ marginLeft: 15, height: 40, width: 40, borderRadius: 40 / 2, backgroundColor: '#ececec', marginRight: 5, marginTop: 5, justifyContent: 'center', alignItems: 'center', }}>
 							<RnIcon name="caret-forward-outline" size={25} color="black" style={{ marginLeft: 3 }} />
 						</TouchableOpacity>
-						<TouchableOpacity onPress={onRemoveItem(item)} style={{ marginLeft: 75, backgroundColor: '#fff', marginTop: -8, marginRight: 15, marginVertical: 10, justifyContent: 'center', alignItems: 'center', }}>
-							<RnIcon1 name="delete" size={40} color="black" />
-						</TouchableOpacity>
 					</View>
-
+				</View>
+				<View style={{flex:1.2, width: '10%', justifyContent: 'center', alignItems: 'center' }}>
+					<TouchableOpacity onPress={onRemoveItem(item)} style={{}}>
+						<RnIcon name="close-outline" size={40} color="black" />
+					</TouchableOpacity>
 				</View>
 			</View>
 		);
@@ -68,7 +69,7 @@ export default function Bag({ navigation }) {
 			<TouchableOpacity onPress={() => { navigation.goBack() }} style={{ position: 'absolute', left: 0, top: 5 }}>
 				<RnIcon name="chevron-back-outline" size={36} color="black" />
 			</TouchableOpacity>
-			{productList?.length ? <View style={{ height: 100, paddingHorizontal: 15, paddingVertical: 15, borderTopWidth: 1, borderColor: '#ececec', backgroundColor: 'white' }}>
+			{productList?.length ? <View style={{ height: 100, paddingHorizontal: 15, paddingVertical: 15, borderTopWidth: 0.5, borderColor: '#ececec', backgroundColor: 'white' }}>
 				<View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
 					<Text style={{ fontSize: 22, fontWeight: 'bold' }}>Total item: </Text>
 					<Text style={{ fontSize: 22, fontWeight: 'bold' }}>{totalItem}</Text>
@@ -90,10 +91,10 @@ export default function Bag({ navigation }) {
 						ListFooterComponent={
 							<View>
 								{productList?.length ?
-									<TouchableOpacity onPress={onRemoveAll} style={{ marginHorizontal: 10, backgroundColor: '#fff', marginVertical: 10, justifyContent: 'center', alignItems: 'center', height: 60, borderRadius: 20 }}>
+									<TouchableOpacity onPress={onRemoveAll} style={{ marginHorizontal: 50, backgroundColor: '#ff8c70', marginVertical: 10, justifyContent: 'center', alignItems: 'center', height: 50, borderRadius: 25 }}>
 										<View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
-											<RnIcon1 name="delete" size={40} color="black" />
-											<Text style={{ fontSize: 26 }}>Remove All</Text>
+											<RnIcon name="trash-outline" size={32} color="black" />
+											<Text style={{ fontSize: 24, marginLeft: 10}}>Remove All</Text>
 										</View>
 									</TouchableOpacity> : null}
 
