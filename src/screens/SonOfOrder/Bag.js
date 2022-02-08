@@ -40,7 +40,7 @@ export default function Bag({ navigation }) {
 					source={{ uri: item.image }}
 				/>
 				<View style={{ flex:5.8,}}>
-					<Text ellipsizeMode='tail' numberOfLines={1} style={{ fontSize: 24, marginLeft: 10, fontWeight: 'bold' }}>{item.product_name}</Text>
+					<Text ellipsizeMode='tail' numberOfLines={1} style={{ width:'85%',fontSize: 24, marginLeft: 10, fontWeight: 'bold' }}>{item.product_name}</Text>
 					<Text style={{ fontSize: 20, marginTop: 5, marginLeft: 10, }}>Giá: {TotalPrice(item.price, item.quantity)}</Text>
 					<View style={{ flexDirection: 'row', marginLeft: 10, }}>
 						<TouchableOpacity onPress={onChangeQuantity('reduce', item)} style={{ marginLeft: 0, height: 40, width: 40, borderRadius: 40 / 2, backgroundColor: '#ececec', marginRight: 5, marginTop: 5, justifyContent: 'center', alignItems: 'center', }}>

@@ -20,7 +20,7 @@ export default function Product({ navigation }) {
 	const [isVisible, setIsVisible] = useState(false)
 	const dispatch = useDispatch();
 	const [isLoading, setIsLoading] = useState(false)
-	
+
 	const onOpenModal = () => {
 		setIsVisible(true)
 	}
@@ -34,7 +34,7 @@ export default function Product({ navigation }) {
 	}
 
 	const onAddToWishlist = (item) => () => {
-		dispatch({ type: 'ADD_CART_WL', data: { ...item, quantity:  1 }})
+		dispatch({ type: 'ADD_CART_WL', data: { ...item, quantity: 1 } })
 	}
 
 	useEffect(() => {
@@ -53,26 +53,26 @@ export default function Product({ navigation }) {
 
 		callGetProductList()
 	}, [])
-	const onMoveToDetail = (data) => () =>{
-		navigation.navigate('Detail', {detail: data})
+	const onMoveToDetail = (data) => () => {
+		navigation.navigate('Detail', { detail: data })
 	}
-	
+
 	const renderItem = ({ item }) => (
 		<View style={{ flex: 1, }}>
-			<TouchableOpacity onPress={onMoveToDetail(item)} style={{ margin: 5, flexDirection: 'row-reverse', borderRadius: 10, backgroundColor: 'white', padding: 10, width: '95%', marginRight: 10 }}>
+			<TouchableOpacity onPress={onMoveToDetail(item)} style={{ marginVertical: 5,marginHorizontal:10, flexDirection: 'row', borderRadius: 8, backgroundColor: 'white', padding: 10, width: '95%', marginRight: 10 }}>
 				<Image
-					style={{ height: 100, width: '30%', borderRadius: 10 }}
+					style={{ height: 100, flex:3, borderRadius: 10 }}
 					source={{ uri: item.image }}
 				/>
-				<View style={{ width: '65%', marginRight: 10 }}>
-					<Text style={{ fontSize: 16, marginTop: 10, fontWeight: 'bold' }}>{item.product_name}</Text>
-					<Text ellipsizeMode='tail' numberOfLines={1} style={{ fontSize: 16, marginTop: 2 }}>{item.description}</Text>
-					<Text style={{ fontSize: 16,marginTop:2 }}>Giá: {item.price}đ</Text>
-					<View style={{ flexDirection: 'row',marginLeft: 90,marginTop:-35}}>
-						<TouchableOpacity onPress={onAddToWishlist(item)} style={{ marginLeft: 80, height: 36, width: 36, borderRadius: 36 / 2, backgroundColor: '#ececec', marginRight: 5, marginTop: 5, justifyContent: 'center', alignItems: 'center', }}>
-							<RnIcon name="heart" size={22} color="black" />
-						</TouchableOpacity>
-					</View>
+				<View style={{ flex:6, marginLeft: 10 }}>
+					<Text ellipsizeMode='tail' numberOfLines={1} style={{ width:'85%',fontSize: 16, marginTop: 10, fontWeight: 'bold' }}>{item.product_name}</Text>
+					<Text ellipsizeMode='tail' numberOfLines={1} style={{width:'85%', fontSize: 16, marginTop: 2 }}>{item.description}</Text>
+					<Text style={{ fontSize: 16, marginTop: 2 }}>Giá: {item.price}đ</Text>
+				</View>
+				<View style={{ flex:1,flexDirection:'column-reverse' }}>
+					<TouchableOpacity onPress={onAddToBag(item)} style={{ height: 36, width: 36, borderRadius: 36 / 2, backgroundColor: '#fff700',justifyContent:'center',alignItems:'center' }}>
+						<RnIcon name="add-outline" size={36} color="white" />
+					</TouchableOpacity>
 				</View>
 			</TouchableOpacity>
 		</View>
@@ -81,10 +81,10 @@ export default function Product({ navigation }) {
 	return (
 		<View style={{ flex: 1, backgroundColor: '#f5f5ef' }}>
 			<View style={{ height: 50, flexDirection: 'row', backgroundColor: 'white' }}>
-				<View style={{ flex:1,alignItems:'flex-start', justifyContent: 'center', marginLeft:20}}>
+				<View style={{ flex: 1, alignItems: 'flex-start', justifyContent: 'center', marginLeft: 20 }}>
 					<Text style={{ fontWeight: 'bold', fontSize: 22 }}>Giao Hàng</Text>
 				</View>
-				<View style={{ flex:1,flexDirection:'row-reverse'}}>
+				<View style={{ flex: 1, flexDirection: 'row-reverse' }}>
 					<TouchableOpacity onPress={() => navigation.navigate('Bag')} style={{ height: 36, width: 36, borderRadius: 36 / 2, backgroundColor: '#fff', marginRight: 10, marginVertical: 8, justifyContent: 'center', alignItems: 'center', elevation: 15, shadowColor: '0,0,0, .4', shadowRadius: 1, shadowOpacity: 1, shadowOffset: { height: 1, width: 1 } }}>
 						<RnIcon2 name="shopping-bag-1" size={22} color="black" />
 					</TouchableOpacity>

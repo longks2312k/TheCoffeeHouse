@@ -27,7 +27,7 @@ export default function Wishlist({navigation}) {
 					source={{ uri: item.image }}
 				/>
 				<View style={{ flex:5.8,}}>
-					<Text ellipsizeMode='tail' numberOfLines={1} style={{ fontSize: 24, marginLeft: 10, fontWeight: 'bold' }}>{item.product_name}</Text>
+					<Text ellipsizeMode='tail' numberOfLines={1} style={{width:'85%', fontSize: 24, marginLeft: 10, fontWeight: 'bold' }}>{item.product_name}</Text>
 					<Text style={{ fontSize: 20, marginTop: 5, marginLeft: 10, }}>Giá: {item.price}</Text>
 				</View>
 				<View style={{flex:1.2, width: '10%', justifyContent: 'center', alignItems: 'center' }}>
