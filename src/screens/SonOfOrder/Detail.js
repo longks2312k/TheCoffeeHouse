@@ -14,9 +14,12 @@ export default function DetailScreen({ route, navigation }) {
 	const [detailProduct, setDetailProduct] = useState()
 	const { detail } = route.params;
 
-	console.tron.log('detail', detail)
 	const onAddToBag = (detail) => () => {
 		dispatch({ type: 'ADD_CART', data: { ...detail, quantity: 1 } })
+	}
+
+	const onAddToWishlist = (item) => () => {
+		dispatch({ type: 'ADD_CART_WL', data: { ...item, quantity: 1 } })
 	}
 
 	return (
@@ -27,6 +30,9 @@ export default function DetailScreen({ route, navigation }) {
 			/>
 			<TouchableOpacity onPress={() => { navigation.goBack() }} style={{ position: 'absolute', left: 0, top: 0 }}>
 				<RnIcon name="close-outline" size={50} color="black" />
+			</TouchableOpacity>
+			<TouchableOpacity onPress={onAddToWishlist(detail)} style={{ position: 'absolute', right: 8, top: 8 }}>
+				<RnIcon name="heart" size={40} color="black" />
 			</TouchableOpacity>
 			<View style={{ width: '100%', paddingLeft: 10, backgroundColor: 'white' }}>
 				<Text numberOfLines={1} style={{ fontSize: 22, marginTop: 10, fontWeight: 'bold' }}>{detail.product_name}</Text>
