@@ -21,7 +21,7 @@ export default function Product({ navigation }) {
 	const dispatch = useDispatch();
 	const [isLoading, setIsLoading] = useState(false)
 	
-	const onTouch = () => {
+	const onOpenModal = () => {
 		setIsVisible(true)
 	}
 
@@ -61,16 +61,16 @@ export default function Product({ navigation }) {
 		<View style={{ flex: 1, }}>
 			<TouchableOpacity onPress={onMoveToDetail(item)} style={{ margin: 5, flexDirection: 'row-reverse', borderRadius: 10, backgroundColor: 'white', padding: 10, width: '95%', marginRight: 10 }}>
 				<Image
-					style={{ height: 120, width: '30%', borderRadius: 10 }}
+					style={{ height: 100, width: '30%', borderRadius: 10 }}
 					source={{ uri: item.image }}
 				/>
 				<View style={{ width: '65%', marginRight: 10 }}>
-					<Text style={{ fontSize: 18, marginTop: 10, fontWeight: 'bold' }}>{item.product_name}</Text>
-					<Text ellipsizeMode='tail' numberOfLines={2} style={{ fontSize: 16, marginTop: 2 }}>{item.description}</Text>
-					<Text style={{ fontSize: 18,marginTop:10 }}>Giá: {item.price}đ</Text>
+					<Text style={{ fontSize: 16, marginTop: 10, fontWeight: 'bold' }}>{item.product_name}</Text>
+					<Text ellipsizeMode='tail' numberOfLines={1} style={{ fontSize: 16, marginTop: 2 }}>{item.description}</Text>
+					<Text style={{ fontSize: 16,marginTop:2 }}>Giá: {item.price}đ</Text>
 					<View style={{ flexDirection: 'row',marginLeft: 90,marginTop:-35}}>
-						<TouchableOpacity onPress={onAddToWishlist(item)} style={{ marginLeft: 120, height: 40, width: 40, borderRadius: 40 / 2, backgroundColor: '#ececec', marginRight: 5, marginTop: 5, justifyContent: 'center', alignItems: 'center', }}>
-							<RnIcon name="heart" size={25} color="black" />
+						<TouchableOpacity onPress={onAddToWishlist(item)} style={{ marginLeft: 80, height: 36, width: 36, borderRadius: 36 / 2, backgroundColor: '#ececec', marginRight: 5, marginTop: 5, justifyContent: 'center', alignItems: 'center', }}>
+							<RnIcon name="heart" size={22} color="black" />
 						</TouchableOpacity>
 					</View>
 				</View>
@@ -80,35 +80,22 @@ export default function Product({ navigation }) {
 	);
 	return (
 		<View style={{ flex: 1, backgroundColor: '#f5f5ef' }}>
-			<View style={{ height: 60, flexDirection: 'row', backgroundColor: 'white' }}>
+			<View style={{ height: 50, flexDirection: 'row', backgroundColor: 'white' }}>
 				<View style={{ flex:1,alignItems:'flex-start', justifyContent: 'center', marginLeft:20}}>
-					<Text style={{ fontWeight: 'bold', fontSize: 28 }}>Giao Hàng</Text>
+					<Text style={{ fontWeight: 'bold', fontSize: 22 }}>Giao Hàng</Text>
 				</View>
 				<View style={{ flex:1,flexDirection:'row-reverse'}}>
-					<TouchableOpacity onPress={() => navigation.navigate('Bag')} style={{  height: 42, width: 42, borderRadius: 50 / 2, backgroundColor: '#fff', marginRight: 15, marginVertical: 10, justifyContent: 'center', alignItems: 'center', elevation: 15, shadowColor: '0,0,0, .4', shadowRadius: 1, shadowOpacity: 1, shadowOffset: { height: 1, width: 1 } }}>
-						<RnIcon2 name="shopping-bag-1" size={25} color="black" />
+					<TouchableOpacity onPress={() => navigation.navigate('Bag')} style={{ height: 36, width: 36, borderRadius: 36 / 2, backgroundColor: '#fff', marginRight: 10, marginVertical: 8, justifyContent: 'center', alignItems: 'center', elevation: 15, shadowColor: '0,0,0, .4', shadowRadius: 1, shadowOpacity: 1, shadowOffset: { height: 1, width: 1 } }}>
+						<RnIcon2 name="shopping-bag-1" size={22} color="black" />
 					</TouchableOpacity>
-					<TouchableOpacity style={{ height: 42, width: 42, borderRadius: 50 / 2, backgroundColor: '#fff', marginRight: 15, marginVertical: 10, justifyContent: 'center', alignItems: 'center', elevation: 15, shadowColor: '0,0,0, .4', shadowRadius: 1, shadowOpacity: 1, shadowOffset: { height: 1, width: 1 } }}>
-						<RnIcon name="notifications-outline" size={30} color="black" />
+					<TouchableOpacity onPress={() => navigation.navigate('Wishlist')} style={{ height: 36, width: 36, borderRadius: 36 / 2, backgroundColor: '#fff', marginRight: 10, marginVertical: 8, justifyContent: 'center', alignItems: 'center', elevation: 15, shadowColor: '0,0,0, .4', shadowRadius: 1, shadowOpacity: 1, shadowOffset: { height: 1, width: 1 } }}>
+						<RnIcon name="heart-outline" size={24} color="black" />
 					</TouchableOpacity>
 				</View>
 			</View>
-			<View style={{ borderBottomWidth: 0.2, flexDirection: "row", height: 70, justifyContent: 'center', alignItems: 'center', borderColor: "gray" }}>
-				<TextInput placeholder="  Search" style={{ height: 50, width: '65%', backgroundColor: 'white', borderRadius: 20, fontSize: 18 }}>
-
-				</TextInput>
-				<TouchableOpacity onPress={onTouch} style={{ height: 50, width: 50, borderRadius: 50 / 2, backgroundColor: 'white', marginLeft: 5, marginVertical: 10, justifyContent: 'center', alignItems: 'center' }}>
-					<RnIcon name="search-outline" size={30} color="black" />
-
-				</TouchableOpacity>
-				<TouchableOpacity onPress={() => navigation.navigate('Wishlist')} style={{ height: 50, width: 50, borderRadius: 50 / 2, backgroundColor: 'white', marginLeft: 5, marginVertical: 10, justifyContent: 'center', alignItems: 'center' }}>
-					<RnIcon name="heart-outline" size={30} color="black" />
-
-				</TouchableOpacity>
-			</View>
-			<ScrollView showsHorizontalScrollIndicator={false} horizontal style={{ flex: 1, height: 50, width: '100%', backgroundColor: '#ececec', marginBottom: 5 }}>
+			{/* <ScrollView showsHorizontalScrollIndicator={false} horizontal style={{ flex: 1, height: 50, width: '100%', backgroundColor: '#ececec', marginBottom: 5 }}>
 				<View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: 0 }}>
-					<TouchableOpacity style={{ height: 42, paddingHorizontal: 8, backgroundColor: 'white', borderRadius: 20, justifyContent: 'center', alignItems: 'center', marginHorizontal: 5 }}>
+					<TouchableOpacity onPress={onOpenModal} style={{ height: 42, paddingHorizontal: 8, backgroundColor: 'white', borderRadius: 20, justifyContent: 'center', alignItems: 'center', marginHorizontal: 5 }}>
 						<Text style={{ fontSize: 20 }}>Cà phê</Text>
 					</TouchableOpacity>
 					<TouchableOpacity style={{ height: 42, paddingHorizontal: 8, backgroundColor: 'white', borderRadius: 20, justifyContent: 'center', alignItems: 'center', marginHorizontal: 5 }}>
@@ -124,9 +111,8 @@ export default function Product({ navigation }) {
 						<Text style={{ fontSize: 20 }}>Bộ sưu tập quà tặng</Text>
 					</TouchableOpacity>
 				</View>
-
-			</ScrollView>
-			<View style={{ flex: 9 }}>
+			</ScrollView> */}
+			<View style={{ flex: 1 }}>
 				{/* {isLoading && <Loading />} */}
 				<FlatList
 					style={{ backgroundColor: '#ececec', }}
