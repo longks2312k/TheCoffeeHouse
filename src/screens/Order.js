@@ -127,7 +127,7 @@ export default function Product({ navigation }) {
 
 			</ScrollView>
 			<View style={{ flex: 9 }}>
-				{isLoading && <Loading />}
+				{/* {isLoading && <Loading />} */}
 				<FlatList
 					style={{ backgroundColor: '#ececec', }}
 					data={product}
