@@ -36,18 +36,18 @@ export default function Bag({ navigation }) {
 		return (
 			<View style={{ flex: 1, marginVertical: 5,marginHorizontal:10, flexDirection: 'row', borderRadius: 8, backgroundColor: 'white', padding: 10, width: '95%', marginRight: 10 }}>
 				<Image
-					style={{ height: 120, flex:3, borderRadius: 5 }}
+					style={{ height: 100, flex:3, borderRadius: 5 }}
 					source={{ uri: item.image }}
 				/>
 				<View style={{ flex:5.8,}}>
 					<Text ellipsizeMode='tail' numberOfLines={1} style={{ width:'85%',fontSize: 24, marginLeft: 10, fontWeight: 'bold' }}>{item.product_name}</Text>
 					<Text style={{ fontSize: 20, marginTop: 5, marginLeft: 10, }}>Giá: {TotalPrice(item.price, item.quantity)}</Text>
 					<View style={{ flexDirection: 'row', marginLeft: 10, }}>
-						<TouchableOpacity onPress={onChangeQuantity('reduce', item)} style={{ marginLeft: 0, height: 40, width: 40, borderRadius: 40 / 2, backgroundColor: '#ececec', marginRight: 5, marginTop: 5, justifyContent: 'center', alignItems: 'center', }}>
+						<TouchableOpacity onPress={onChangeQuantity('reduce', item)} style={{ marginLeft: 0, height: 36, width: 36, borderRadius: 36 / 2, backgroundColor: '#ececec', marginRight: 5, marginTop: 5, justifyContent: 'center', alignItems: 'center', }}>
 							<RnIcon name="caret-back-outline" size={25} color="black" style={{ marginRight: 3 }} />
 						</TouchableOpacity>
-						<Text style={{ marginLeft: 10, fontSize: 24, marginTop: 8 }}>{item.quantity}</Text>
-						<TouchableOpacity onPress={onChangeQuantity('increase', item)} style={{ marginLeft: 15, height: 40, width: 40, borderRadius: 40 / 2, backgroundColor: '#ececec', marginRight: 5, marginTop: 5, justifyContent: 'center', alignItems: 'center', }}>
+						<Text style={{ marginLeft: 10, fontSize: 20, marginTop: 8 }}>{item.quantity}</Text>
+						<TouchableOpacity onPress={onChangeQuantity('increase', item)} style={{ marginLeft: 15, height: 36, width: 36, borderRadius: 36 / 2, backgroundColor: '#ececec', marginRight: 5, marginTop: 5, justifyContent: 'center', alignItems: 'center', }}>
 							<RnIcon name="caret-forward-outline" size={25} color="black" style={{ marginLeft: 3 }} />
 						</TouchableOpacity>
 					</View>
