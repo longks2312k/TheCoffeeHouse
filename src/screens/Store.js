@@ -39,7 +39,7 @@ export default function Store({ navigation }) {
 
 	const renderItem = ({ item }) => (
 		<View style={{ flex: 1, }}>
-			<TouchableOpacity onPress={onMoveToDetail(item)} style={{ flex: 1, margin: 5, flexDirection: 'row', borderRadius: 5, backgroundColor: 'white', padding: 10, }}>
+			<TouchableOpacity onPress={onMoveToDetail(item)} style={{ flex: 1, margin: 5, flexDirection: 'row', borderRadius: 8, backgroundColor: 'white', padding: 10, }}>
 				<Image
 					style={{ flex:1, height: 100, borderRadius: 5 ,margin:5}}
 					source={{ uri: getImage(item.image_1) }}
