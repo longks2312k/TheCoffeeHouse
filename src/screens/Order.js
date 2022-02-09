@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { View, Text, FlatList, StyleSheet, StatusBar, TouchableOpacity, SafeAreaView, Image, Dimensions, ScrollView, ViewBase, TextInput } from 'react-native'
+import { View, Text, FlatList, StyleSheet, StatusBar, TouchableOpacity, SafeAreaView, Image, Dimensions, ScrollView, ViewBase, TextInput,RefreshControl } from 'react-native'
 
 import axios from 'axios';
 import { getImage } from './utils/index';
@@ -13,6 +13,9 @@ import RnIcon1 from 'react-native-vector-icons/MaterialCommunityIcons';
 import RnIcon2 from 'react-native-vector-icons/Fontisto';
 import RnIcon3 from 'react-native-vector-icons/FontAwesome5';
 
+const wait = (timeout) => {
+	return new Promise(resolve => setTimeout(resolve, timeout));
+  }
 
 export default function Product({ navigation }) {
 
@@ -20,6 +23,13 @@ export default function Product({ navigation }) {
 	const [isVisible, setIsVisible] = useState(false)
 	const dispatch = useDispatch();
 	const [isLoading, setIsLoading] = useState(false)
+	const [refreshing, setRefreshing] = React.useState(false);
+	
+	const onRefresh = React.useCallback(() => {
+		setRefreshing(true);
+		setProduct();
+		wait(2000).then(() => setRefreshing(false));
+	}, []);
 
 	const onOpenModal = () => {
 		setIsVisible(true)
@@ -52,7 +62,7 @@ export default function Product({ navigation }) {
 		}
 
 		callGetProductList()
-	}, [])
+	}, [refreshing])
 	const onMoveToDetail = (data) => () => {
 		navigation.navigate('Detail', { detail: data })
 	}
@@ -79,7 +89,7 @@ export default function Product({ navigation }) {
 
 	);
 	return (
-		<View style={{ flex: 1, backgroundColor: '#f5f5ef' }}>
+		<View style={{ flex: 1, backgroundColor: 'black' }}>
 			<View style={{ height: 50, flexDirection: 'row', backgroundColor: 'white' }}>
 				<View style={{ flex: 1, alignItems: 'flex-start', justifyContent: 'center', marginLeft: 20 }}>
 					<Text style={{ fontWeight: 'bold', fontSize: 22 }}>Giao Hàng</Text>
@@ -115,11 +125,17 @@ export default function Product({ navigation }) {
 			<View style={{ flex: 1 }}>
 				{/* {isLoading && <Loading />} */}
 				<FlatList
-					style={{ backgroundColor: '#ececec', }}
+					style={{ backgroundColor: '#f5f5ef',minHeight: 300 }}
 					data={product}
 					renderItem={renderItem}
 					keyExtractor={item => item._id?.toString()}
 					showsVerticalScrollIndicator={false}
+					refreshControl={
+						<RefreshControl
+							refreshing={refreshing}
+							onRefresh={onRefresh}
+						/>
+					}
 				/>
 			</View>
 			<Modal

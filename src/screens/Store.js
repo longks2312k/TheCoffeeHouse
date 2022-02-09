@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { View, Text, FlatList, StyleSheet, StatusBar, TouchableOpacity, SafeAreaView, Image, Dimensions, ScrollView, ViewBase, TextInput } from 'react-native'
+import { View, Text, FlatList, StyleSheet,RefreshControl, StatusBar, TouchableOpacity, SafeAreaView, Image, Dimensions, ScrollView, ViewBase, TextInput } from 'react-native'
 import RnIcon from 'react-native-vector-icons/Ionicons';
 import RnIcon1 from 'react-native-vector-icons/MaterialCommunityIcons';
 import RnIcon2 from 'react-native-vector-icons/Fontisto';
@@ -8,6 +8,10 @@ import { getImage } from './utils/index'
 import { useSelector, useDispatch } from "react-redux";
 import Loading from '../components/Loading';
 
+const wait = (timeout) => {
+	return new Promise(resolve => setTimeout(resolve, timeout));
+  }
+
 export default function Store({ navigation }) {
 
 	const { height, width } = Dimensions.get('window');
@@ -15,6 +19,15 @@ export default function Store({ navigation }) {
 	const [product, setProduct] = useState([])
 	const dispatch = useDispatch();
 	const [isLoading, setIsLoading] = useState(false)
+	const [refreshing, setRefreshing] = React.useState(false);
+	
+	const onRefresh = React.useCallback(() => {
+		setRefreshing(true);
+		setProduct();
+		wait(2000).then(() => {
+			setRefreshing(false)
+		});
+	}, []);
 
 	const onMoveToDetail = (data) => () => {
 		navigation.navigate('storeDetail', { storeDetail: data })
@@ -35,7 +48,7 @@ export default function Store({ navigation }) {
 			}
 		}
 		callGetStore()
-	}, [])
+	}, [refreshing])
 
 	const renderItem = ({ item }) => (
 		<View style={{ flex: 1, }}>
@@ -82,13 +95,19 @@ export default function Store({ navigation }) {
 			</View>
 			<SafeAreaView style={{ flex: 1, width: '94%', marginLeft: '3%', borderRadius: 10, }}>
 				{/* {isLoading && <Loading />} */}
-				<View style={{ backgroundColor: '#f5f5ef' }}>
+				<View style={{ backgroundColor: '#f5f5ef',minHeight: 300 }}>
 					<FlatList
 						style={{ backgroundColor: '#f5f5ef', }}
 						data={product}
 						renderItem={renderItem}
 						keyExtractor={item => item.id?.toString()}
 						showsVerticalScrollIndicator={false}
+						refreshControl={
+							<RefreshControl
+								refreshing={refreshing}
+								onRefresh={onRefresh}
+							/>
+						}
 					/>
 				</View>
 			</SafeAreaView>
