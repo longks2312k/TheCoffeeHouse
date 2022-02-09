@@ -4,7 +4,7 @@ import { View, Text } from 'react-native'
 export default function () {
   return (
     <View>
-      <Text>ssssss</Text>
+      <Text>Tap 1</Text>
     </View>
   )
 }
