@@ -15,20 +15,22 @@ export default function StoreDetailScreen({ route, navigation }) {
   const [detailProduct, setDetailProduct] = useState()
   const { storeDetail } = route.params;
 
-  console.tron.log('storeDetail', storeDetail)
 
 
   return (
     <View>
       <Image
         style={{ height: 400, width: '100%',backgroundColor:'#ececec'}}
-        source={{ uri: getImage(storeDetail.image_1) }}
+        source={{ uri: storeDetail.image_1 }}
       />
-      <View style={{ width: '100%', marginHorizontal: 10 ,borderTopWidth:2,borderColor:'#ececec'}}>
+      <TouchableOpacity onPress={() => { navigation.goBack() }} style={{ position: 'absolute', left: 0, top: 0 }}>
+				<RnIcon name="close-outline" size={50} color="black" />
+			</TouchableOpacity>
+      <View style={{ width: '100%', paddingHorizontal: 10 ,borderTopWidth:2,borderColor:'#ececec'}}>
         <Text ellipsizeMode='tail' numberOfLines={3} style={{ fontSize: 24,marginTop:10, fontWeight: 'bold' }}>{storeDetail.name}</Text>
-        <Text ellipsizeMode='tail' numberOfLines={3} style={{ fontSize: 24,marginTop:10 }}>Địa Chỉ: {storeDetail.street} - {storeDetail.district_name} - {storeDetail.state_name}</Text>
-        <Text style={{ fontSize: 24,marginTop:10 }}>Thời Gian Hoạt Động: {storeDetail.opening_time}-{storeDetail.closing_time}</Text>
-        <Text style={{ fontSize: 24,marginTop:10 }}>SĐT: {storeDetail.phone}</Text>
+        <Text ellipsizeMode='tail' numberOfLines={3} style={{ fontSize: 22,marginTop:10 }}>Địa Chỉ: {storeDetail.street} - {storeDetail.district_name} - {storeDetail.state_name}</Text>
+        <Text style={{ fontSize: 22,marginTop:10 }}>Thời Gian Hoạt Động: {storeDetail.opening_time}-{storeDetail.closing_time}</Text>
+        <Text style={{ fontSize: 22,marginTop:10 }}>SĐT: {storeDetail.phone}</Text>
       </View>
     </View>
   )

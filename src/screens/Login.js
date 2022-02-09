@@ -48,6 +48,9 @@ export default function Login({navigation}) {
 					source={{ uri: 'https://www.cukcuk.vn/wp-content/uploads/2019/09/foody-mobile-960x600-the-coffee-h-761-636304658264606242-1568800909178126962452-crop-1568800918203296009047.jpg' }}
 				/>
 			</View>
+			<TouchableOpacity onPress={() => { navigation.goBack() }} style={{ position: 'absolute', left: 0, top: 0 }}>
+				<RnIcon name="close-outline" size={50} color="white" />
+			</TouchableOpacity>
 			<View style={{ flex: 1 }}>
 				<View style={{ height: 800, marginTop: -30, borderTopLeftRadius: 30, borderTopRightRadius: 30, backgroundColor: 'white' }}>
 					<View style={{ justifyContent: 'center', alignItems: 'center' , marginTop:20}}>
@@ -57,21 +60,21 @@ export default function Login({navigation}) {
 							textAlign={'center'}
 							maxLength={11}
 							clearTextOnFocus={true}
-							placeholder="Phone Number" 
+							placeholder="Nhập số điện thoại..." 
 							secureTextEntry={false} 
 							value={phone}
 							onChangeText={onChangePhone}
-							style={{ height: 60, width: '90%', fontSize: 24, borderColor: 'gray', borderWidth: 1, marginLeft: 5, fontFamily: 'Times New Roman', borderRadius: 10, marginBottom: 10, marginTop:40}} 
+							style={{ height: 56, width: '90%', fontSize: 24, borderColor: 'gray', borderWidth: 1.2, marginLeft: 5, borderRadius: 10, marginBottom: 10, marginTop:40,backgroundColor:'#e0e0d1'}} 
 						/>
-						<TouchableOpacity onPress={onVerifyPhone} style={{ height: 60, width: '90%', borderColor: 'gray', borderWidth: 1, marginLeft: 5, borderRadius: 10, marginBottom: 10,marginTop:20, justifyContent: 'center', alignItems: 'center', backgroundColor: "gray" }}>
+						<TouchableOpacity onPress={onVerifyPhone} style={{ height: 50, width: '90%', borderColor: 'gray', marginLeft: 5, borderRadius: 10, marginBottom: 10,marginTop:20, justifyContent: 'center', alignItems: 'center', backgroundColor: "#ffd700" }}>
 							<Text style={{ fontSize: 24, color: 'white' }}>Đăng Nhập</Text>
 						</TouchableOpacity>
-						<View style={{ flexDirection: 'row',marginTop:30 }}>
-							<View style={{ borderWidth: 1, width: '34%', height: 2, marginRight: 10, marginTop: 12, borderColor: "#d8d5d5" }}></View>
+						<View style={{ flexDirection: 'row',marginTop:10 }}>
+							<View style={{ borderWidth: 1, width: '30%', height: 2, marginRight: 10, marginTop: 12, borderColor: "#d8d5d5" }}></View>
 							<Text style={{ fontSize: 24 }}>Hoặc</Text>
-							<View style={{ borderWidth: 1, width: '34%', height: 2, marginLeft: 10, marginTop: 12, borderColor: "#d8d5d5" }}></View>
+							<View style={{ borderWidth: 1, width: '30%', height: 2, marginLeft: 10, marginTop: 12, borderColor: "#d8d5d5" }}></View>
 						</View>
-						<TouchableOpacity style={{ height: 60, width: '90%', borderColor: 'blue', borderWidth: 1, marginLeft: 5, borderRadius: 10, marginBottom: 20, marginTop: 40, justifyContent: 'center', alignItems: 'center', backgroundColor: "blue" }}>
+						<TouchableOpacity style={{ height: 50, width: '90%', borderColor: 'blue', borderWidth: 1, marginLeft: 5, borderRadius: 10, marginBottom: 10, marginTop: 15, justifyContent: 'center', alignItems: 'center', backgroundColor: '#4169e1' }}>
 							<Text style={{ fontSize: 24, color: 'white' }}>Tiếp tục bằng Facebook</Text>
 						</TouchableOpacity>
 					</View>
@@ -92,19 +95,19 @@ export default function Login({navigation}) {
 					<Text style={{ fontSize: 18,marginVertical:0}}>Một mã Xác thực gồm 6 chữ số đã được gửi đến số </Text>
 					<Text style={{ fontSize: 18,marginBottom:20,marginVertical:10}}>điện thoại:{phone}</Text>
 					<TextInput 
-							textAlign={'center'}
-							maxLength={6}
-							clearTextOnFocus={true}
-							keyboardType="numeric"
-							placeholder="Mã OTP" 
-							secureTextEntry={false} 
-							value={code}						
-							style={{ height: 60, width: '90%', fontSize: 22, borderColor: 'gray', borderWidth: 1, marginLeft: 5, fontFamily: 'Times New Roman', borderRadius: 10, marginBottom: 20,justifyContent:'center',alignItems:'center' }} 
-						/>
-						<TouchableOpacity onPress={onVerifyCode} style={{ height: 60, width: '90%', borderColor: 'gray', borderWidth: 1, marginLeft: 5, borderRadius: 10, marginBottom: 20, justifyContent: 'center', alignItems: 'center', backgroundColor: "gray" }}>
-							<Text style={{ fontSize: 22, color: 'white' }}>Xác Nhận</Text>
-						</TouchableOpacity>
-						
+						textAlign={'center'}
+						maxLength={6}
+						clearTextOnFocus={true}
+						keyboardType="numeric"
+						placeholder="Mã OTP" 
+						secureTextEntry={false} 
+						value={code}						
+						style={{ height: 60, width: '90%', fontSize: 22, borderColor: 'gray', borderWidth: 1, marginLeft: 5, fontFamily: 'Times New Roman', borderRadius: 10, marginBottom: 20,justifyContent:'center',alignItems:'center' }} 
+					/>
+					<TouchableOpacity onPress={onVerifyCode} style={{ height: 60, width: '90%', borderColor: 'gray', borderWidth: 1, marginLeft: 5, borderRadius: 10, marginBottom: 20, justifyContent: 'center', alignItems: 'center', backgroundColor: "gray" }}>
+						<Text style={{ fontSize: 22, color: 'white' }}>Xác Nhận</Text>
+					</TouchableOpacity>
+					
 				</View>
       </Modal>
 		</SafeAreaView>

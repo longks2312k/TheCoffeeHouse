@@ -68,7 +68,7 @@ export default function Other({ navigation }) {
 						<Text style={{flex: 9, fontSize: 18 }}>Cài đặt</Text>
 						<RnIcon style={{ flex: 1}} name="ios-chevron-forward" size={28} color="black" />
 					</TouchableOpacity>
-					<TouchableOpacity style={{ flex: 1, backgroundColor: 'white', borderRadius: 10, flexDirection: 'row', marginBottom: 3 ,justifyContent:'center',alignItems:'center'}}>
+					<TouchableOpacity onPress={()=> navigation.navigate('Login')} style={{ flex: 1, backgroundColor: 'white', borderRadius: 10, flexDirection: 'row', marginBottom: 3 ,justifyContent:'center',alignItems:'center'}}>
 						<RnIcon style={{flex: 2,marginLeft: 15, }} name="log-out-outline" size={22} color="black" />
 						<Text style={{flex: 9, fontSize: 18 }}>Đăng xuất</Text>
 						<RnIcon style={{ flex: 1}} name="ios-chevron-forward" size={28} color="black" />
