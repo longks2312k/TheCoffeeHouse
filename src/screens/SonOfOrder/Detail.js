@@ -23,9 +23,9 @@ export default function DetailScreen({ route, navigation }) {
 	}
 
 	return (
-		<View style={{ backgroundColor: 'white' }}>
+		<View style={{flex:1, backgroundColor: 'white' }}>
 			<Image
-				style={{ height: 400, width: '100%', backgroundColor: 'white' }}
+				style={{ flex:6, width: '100%', backgroundColor: 'white' }}
 				source={{ uri: detail.image }}
 			/>
 			<TouchableOpacity onPress={() => { navigation.goBack() }} style={{ position: 'absolute', left: 0, top: 0 }}>
@@ -34,15 +34,15 @@ export default function DetailScreen({ route, navigation }) {
 			<TouchableOpacity onPress={onAddToWishlist(detail)} style={{ position: 'absolute', right: 8, top: 8 }}>
 				<RnIcon name="heart" size={40} color="black" />
 			</TouchableOpacity>
-			<View style={{ width: '100%', paddingLeft: 10, backgroundColor: 'white' }}>
+			<View style={{ flex:4,width: '100%', paddingHorizontal: 10, backgroundColor: 'white' }}>
 				<Text numberOfLines={1} style={{ fontSize: 22, marginTop: 10, fontWeight: 'bold' }}>{detail.product_name}</Text>
-				<Text ellipsizeMode='tail' numberOfLines={3} style={{ fontSize: 16, marginTop: 2 }}>{detail.description}đ</Text>
+				<Text ellipsizeMode='tail' numberOfLines={4} style={{ fontSize: 16, marginTop: 2 }}>{detail.description}đ</Text>
 				<Text style={{ fontSize: 16, marginTop: 10 }}>Sản xuất vào: {detail.created_at}</Text>
 				<Text style={{ fontSize: 16, marginTop: 10 }}>Giá: {detail.price}đ</Text>
 			</View>
-			<View style={{ flexDirection: 'row', marginTop: 10, paddingBottom: 10}}>
+			<View style={{flex:1, flexDirection: 'row', }}>
 				<TouchableOpacity onPress={onAddToBag(detail)} style={{ borderRadius: 20,marginLeft:'5%', height: 50, width: '90%', backgroundColor: '#ffad33',justifyContent: 'center', alignItems: 'center', }}>
-					<Text style={{ fontSize: 16, fontWeight: 'bold' }}>Add To Cart</Text>
+					<Text style={{ fontSize: 20, fontWeight: 'bold' }}>Add To Cart</Text>
 				</TouchableOpacity>
 			</View>
 		</View>
