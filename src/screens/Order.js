@@ -99,7 +99,7 @@ export default function Product({ navigation }) {
 						<RnIcon2 name="shopping-bag-1" size={22} color="black" />
 					</TouchableOpacity>
 					<TouchableOpacity onPress={() => navigation.navigate('Wishlist')} style={{ height: 36, width: 36, borderRadius: 36 / 2, backgroundColor: '#fff', marginRight: 10, marginVertical: 8, justifyContent: 'center', alignItems: 'center', elevation: 15, shadowColor: '0,0,0, .4', shadowRadius: 1, shadowOpacity: 1, shadowOffset: { height: 1, width: 1 } }}>
-						<RnIcon name="heart-outline" size={24} color="black" />
+						<RnIcon name="heart" size={24} color="black" />
 					</TouchableOpacity>
 				</View>
 			</View>
