@@ -9,7 +9,6 @@ import RnIcon3 from 'react-native-vector-icons/FontAwesome5';
 export default function TichDiem() {
   return (
     <View>
-
       <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1 }}>
         <View style={{width:'96%',height:350,backgroundColor:'white',marginLeft:9,marginTop:5,borderRadius:20}}>
           <View style={{height:260,backgroundColor:'orange',width:'100%',borderRadius:10}}>

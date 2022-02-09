@@ -32,7 +32,7 @@ export default function Home({ navigation }) {
 		<View style={{ flex: 1, backgroundColor: '#f5f5ef' }}>
 			<View style={{ height: 50, flexDirection: 'row', backgroundColor: 'white' }}>
 				<View style={{ flex:1,alignItems:'flex-start', justifyContent: 'center', marginLeft:20}}>
-					<Text style={{ fontWeight: 'bold', fontSize: 22 }}>Chào mừng trở lại</Text>
+					<Text ellipsizeMode='tail' numberOfLines={1} style={{ fontWeight: 'bold', fontSize: 20 }}>Chào mừng trở lại</Text>
 				</View>
 				<View style={{ flex:1,flexDirection:'row-reverse'}}>
 					<TouchableOpacity style={{ height: 36, width: 36, borderRadius: 36 / 2, backgroundColor: '#fff', marginRight: 15, marginVertical: 8, justifyContent: 'center', alignItems: 'center', elevation: 15, shadowColor: '0,0,0, .4', shadowRadius: 1, shadowOpacity: 1, shadowOffset: { height: 1, width: 1 } }}>
