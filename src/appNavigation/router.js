@@ -22,7 +22,6 @@ import Bag from '../screens/SonOfOrder/Bag'
 import Login from '../screens/Login'
 import Home from '../screens/Home'
 
-
 const HomeStack = createNativeStackNavigator();
 const OrderStack = createNativeStackNavigator();
 const StoreStack = createNativeStackNavigator();
@@ -81,7 +80,6 @@ export default function App() {
 					tabBarLabelStyle: { fontSize: 10, fontWeight: '700',marginBottom:5},
 					tabBarIcon: ({ focused, color, size }) => {
 						let iconName;
-
 						if (route.name === 'Trang Chủ') {
 							iconName = focused ? 'home-variant' : 'home-variant-outline';
 						} else if (route.name === 'Đặt Hàng') {
@@ -96,13 +94,11 @@ export default function App() {
 						else if (route.name === 'Khác') {
 							iconName = focused ? 'format-list-bulleted' : 'format-list-bulleted';
 						}
-
 						return <RnIcon1 name={iconName} size={28} color={color} />;
 					},
 					tabBarActiveTintColor: '#ffb21a',
 					tabBarInactiveTintColor: '#b3b3b3',
 					headerShown: false,
-
 				})}
 			>
 				<Tap.Screen name="Trang Chủ" component={HomeStackScreen} />
