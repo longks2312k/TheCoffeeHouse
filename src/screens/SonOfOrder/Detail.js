@@ -41,7 +41,17 @@ export default function DetailScreen({ route, navigation }) {
 				<Text style={{ fontSize: 16, marginTop: 10 }}>Giá: {detail.price}đ</Text>
 			</View>
 			<View style={{flex:1, flexDirection: 'row', }}>
-				<TouchableOpacity onPress={onAddToBag(detail)} style={{ borderRadius: 20,marginLeft:'5%', height: 50, width: '90%', backgroundColor: '#ffad33',justifyContent: 'center', alignItems: 'center', }}>
+				<TouchableOpacity 
+					onPress={onAddToBag(detail)} 
+					style={{ 
+						borderRadius: 20,
+						marginLeft:'5%', 
+						height: 50, 
+						width: '90%', 
+						backgroundColor: '#ffad33',
+						justifyContent: 'center', 
+						alignItems: 'center',
+					}}>
 					<Text style={{ fontSize: 20, fontWeight: 'bold' }}>Add To Cart</Text>
 				</TouchableOpacity>
 			</View>
