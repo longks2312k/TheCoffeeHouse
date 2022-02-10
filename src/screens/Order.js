@@ -53,6 +53,10 @@ export default function Product({ navigation }) {
 			try {
 				setIsLoading(true)
 				const response = await getProductList();
+				const cat = response.data.data.filter(function(cat,index){
+					return response.data.data.categ_id === '2'
+				})
+				console.log('data',cat)
 				setProduct(response.data.data)
 				setIsLoading(false)
 
@@ -89,8 +93,8 @@ export default function Product({ navigation }) {
 
 	);
 	return (
-		<View style={{ flex: 1, backgroundColor: 'black' }}>
-			<View style={{ height: 50, flexDirection: 'row', backgroundColor: 'white' }}>
+		<View style={{ flex: 1, backgroundColor: '#f5f5ef' }}>
+			<View style={{ height: 50, flexDirection: 'row', backgroundColor: 'white' ,borderBottomWidth: 2, borderColor: '#f5f5ef'}}>
 				<View style={{ flex: 1, alignItems: 'flex-start', justifyContent: 'center', marginLeft: 20 }}>
 					<Text style={{ fontWeight: 'bold', fontSize: 22 }}>Giao Hàng</Text>
 				</View>

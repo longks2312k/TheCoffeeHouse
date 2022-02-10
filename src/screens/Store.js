@@ -68,7 +68,7 @@ export default function Store({ navigation }) {
 	);
 	return (
 		<View style={{ flex: 1, backgroundColor: '#f5f5ef' }}>
-			<View style={{ height: 50, flexDirection: 'row', backgroundColor: 'white' }}>
+			<View style={{ height: 50, flexDirection: 'row', backgroundColor: 'white',borderBottomWidth: 2, borderColor: '#f5f5ef' }}>
 				<View style={{ flex:1,alignItems:'flex-start', justifyContent: 'center', marginLeft:20}}>
 					<Text style={{ fontWeight: 'bold', fontSize: 22 }}>Cửa Hàng</Text>
 				</View>
