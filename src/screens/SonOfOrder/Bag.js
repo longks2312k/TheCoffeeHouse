@@ -9,6 +9,7 @@ import RnIcon3 from 'react-native-vector-icons/FontAwesome5';
 import { useSelector, useDispatch } from "react-redux";
 
 // import RadioGroup from 'react-native-radio-buttons-group';
+
 // const radioButtonsData = [
 //   {
 //     id: '1',
@@ -149,7 +150,9 @@ const styles = StyleSheet.create({
 	headerView: { 
 		height: 50, 
 		flexDirection: 'row', 
-		backgroundColor: 'white' 
+		backgroundColor: 'white' ,
+		justifyContent:'center',
+		alignItems:'center'
 	},
 	buttonBack: { 
 		position: 'absolute', 
