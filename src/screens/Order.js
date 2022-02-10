@@ -53,10 +53,10 @@ export default function Product({ navigation }) {
 			try {
 				setIsLoading(true)
 				const response = await getProductList();
-				const cat = response.data.data.filter(function(cat,index){
-					return response.data.data.categ_id === '2'
-				})
-				console.log('data',cat)
+				// const cat = response.data.data.filter(function(cat,index){
+				// 	return response.data.data.categ_id === '2'
+				// })
+				// console.log('data',cat)
 				setProduct(response.data.data)
 				setIsLoading(false)
 
