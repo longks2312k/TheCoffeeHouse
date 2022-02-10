@@ -5,7 +5,7 @@ import RnIcon1 from 'react-native-vector-icons/MaterialCommunityIcons';
 import RnIcon2 from 'react-native-vector-icons/Fontisto';
 import RnIcon3 from 'react-native-vector-icons/FontAwesome5';
 
-// import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 // import RadioGroup from 'react-native-radio-buttons-group';
 
