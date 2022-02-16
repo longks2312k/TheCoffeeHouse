@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import { View, Text, BackHandler, Alert, StyleSheet, TouchableOpacity, Image, ScrollView, ViewBase } from 'react-native'
+import { View, Text, BackHandler, Alert, StyleSheet, TouchableOpacity, Image, ScrollView, SafeAreaView } from 'react-native'
 
 import RnIcon from 'react-native-vector-icons/Ionicons';
 import RnIcon1 from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -66,7 +66,7 @@ export default function Home({ navigation }) {
 					</TouchableOpacity>
 				</View>
 			</View>
-			<ScrollView style={{ flex: 1, width: '100%', backgroundColor: '#f5f5ef', borderRadius: 5, }}>
+			<ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1, width: '100%', backgroundColor: '#f5f5ef', borderRadius: 5, }}>
 				<View style={{ height: 120, marginTop: 10, width: '96%', marginLeft: '2%', borderColor: '#f5f5ef', backgroundColor: 'white', borderWidth: 1, borderRadius: 10, flexDirection: 'row', justifyContent: "center", alignItems: "center" }}>
 					<TouchableOpacity onPress={() => navigation.navigate('Order')} style={{ height: 100, width: '48%', backgroundColor: 'white', justifyContent: "center", alignItems: "center", borderRadius: 10 }}>
 						<RnIcon3 name="shipping-fast" size={60} color="orange" />
